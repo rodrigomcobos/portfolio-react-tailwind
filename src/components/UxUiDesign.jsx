@@ -1,6 +1,7 @@
 import React from 'react';
 import Slider from 'react-slick';
-import { FaReact, FaHtml5, FaCss3Alt, FaJsSquare, FaNode, FaDatabase } from 'react-icons/fa'; // Example icons
+import { FaFigma } from 'react-icons/fa'; // Example icons
+import { SiAdobephotoshop, SiAdobeillustrator, SiSketch, SiWix, SiAdobexd } from "react-icons/si";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import UxUiDesign1 from '../assets/uxdesign1.png';
@@ -12,42 +13,42 @@ import UxUiDesign5 from '../assets/uxdesign5.jpg';
 const cardData = [
     {
         id: 1,
-        title: 'Card One',
-        description: 'This is a brief description of card one.',
+        title: 'Restaurant App',
+        description: 'App created using Figma. Restaurant app designed for a Japanese restaurant. Fully complete with most of the essential components. Check it out on my Figma.',
         image: UxUiDesign1,
-        icons: [<FaReact />, <FaHtml5 />, <FaCss3Alt />, <FaJsSquare />, <FaNode />, <FaDatabase />],
+        icons: [<FaFigma />, <SiAdobephotoshop />],
         link: '',
     },
     {
         id: 2,
-        title: 'Card Two',
-        description: 'This is a brief description of card two.',
+        title: 'Calorie Counter App',
+        description: 'App created using Adobe Xd. Simple app with a sequential layout that is clear to use and paired with an apple watch app. Designed logo as well. Check out the demo.',
         image: UxUiDesign2,
-        icons: [<FaReact />, <FaHtml5 />, <FaCss3Alt />, <FaJsSquare />, <FaNode />, <FaDatabase />],
+        icons: [<SiAdobexd />, <SiAdobephotoshop />, <SiAdobeillustrator />],
         link: '',
     },
     {
         id: 3,
-        title: 'Card Three',
-        description: 'This is a brief description of card three.',
+        title: 'Amazon Xtreme Fishing Website',
+        description: 'Website designed using Wix Editor and currently deployed. Client requested an overhaul to the website. Client has requested to convert into a hard coded website soon.',
         image: UxUiDesign3,
-        icons: [<FaReact />, <FaHtml5 />, <FaCss3Alt />, <FaJsSquare />, <FaNode />, <FaDatabase />],
+        icons: [<SiWix />, <SiAdobephotoshop />, <SiAdobeillustrator />],
         link: '',
     },
     {
         id: 4,
-        title: 'Card Four',
-        description: 'This is a brief description of card four.',
+        title: 'Brazil Fritters Website',
+        description: 'Website created using Wix Editor. Custom made from scratch. Layout was defined after extensive research and testing comparing to competitor sites. Site not currently live.',
         image: UxUiDesign4,
-        icons: [<FaReact />, <FaHtml5 />, <FaCss3Alt />, <FaJsSquare />, <FaNode />, <FaDatabase />],
+        icons: [<SiWix />, <SiAdobephotoshop />, <SiAdobeillustrator />],
         link: '',
     },
     {
         id: 5,
-        title: 'Card Five',
-        description: 'This is a brief description of card five.',
+        title: 'Spectre Case Website',
+        description: 'E-commerce site created using Wix Editor. Custom made from scratch. Layout was defined after extensive research and testing comparing to competitor sites. Site not live.',
         image: UxUiDesign5,
-        icons: [<FaReact />, <FaHtml5 />, <FaCss3Alt />, <FaJsSquare />, <FaNode />, <FaDatabase />],
+        icons: [<SiWix />, <SiAdobephotoshop />, <SiAdobeillustrator />],
         link: '',
     }
 ];
@@ -57,11 +58,14 @@ const UxUiDesign = () => {
         dots: true,
         dotsClass: 'slick-dots',
         infinite: true,
-        speed: 500,
+        speed: 600,
         slidesToShow: 3,
         slidesToScroll: 1,
         arrows: true,
         swipeToSlide: true,
+        autoplay: true,
+        autoplaySpeed: 5000,
+        pauseOnHover: true,
         responsive: [
             {
                 breakpoint: 1024,
@@ -89,7 +93,7 @@ const UxUiDesign = () => {
                             <p className="text-gray-600 text-center mb-8">{card.description}</p>
                             <div className="flex space-x-2 mb-4">
                                 {card.icons.map((icon, index) => (
-                                    <span key={index} className="text-2xl text-blue-500">
+                                    <span key={index} className="text-3xl text-blue-500">
                                         {icon}
                                     </span>
                                 ))}

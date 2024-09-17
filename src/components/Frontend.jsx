@@ -73,7 +73,7 @@ const Frontend = () => {
                             <p className="text-gray-600 text-center mb-8">{card.description}</p>
                             <div className="flex space-x-2 mb-4">
                                 {card.icons.map((icon, index) => (
-                                    <span key={index} className="text-2xl text-blue-500">
+                                    <span key={index} className="text-3xl text-blue-500">
                                         {icon}
                                     </span>
                                 ))}
