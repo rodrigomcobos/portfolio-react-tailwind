@@ -22,7 +22,7 @@ const Header = () => {
                 Rodrigo Portfolio
             </a>
             <input type="checkbox" className="peer hidden" id="navbar-open" />
-            <label className="absolute top-8 right-8 cursor-pointer lg:hidden" htmlFor="navbar-open">
+            <label className="absolute top-6 right-6 cursor-pointer lg:hidden" htmlFor="navbar-open">
                 <svg className="h-8 w-8" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 22 22" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M4 6h16M4 12h16M4 18h16"></path>
                 </svg>
