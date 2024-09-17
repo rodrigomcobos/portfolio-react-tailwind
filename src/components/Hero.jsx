@@ -9,7 +9,9 @@ const Hero = () => {
                     <h2 className="text-gray-800 lg:text-6xl md:text-5xl text-4xl font-extrabold mb-4 md:!leading-[56px]">Hi I'm Rodrigo</h2>
                     <h2 className="text-blue-600 lg:text-5xl md:text-4xl text-3xl font-extrabold md-2">Full Stack Developer</h2>
                     <h2 className="text-gray-400 lg:text-2xl md:text-3xl text-2xl font-extrabold mb-4 md:!leading-[56px]">Located in Dallas, TX</h2>
-                    <p className="text-gray-600 mt-6 leading-relaxed">I'm a Product/UX Designer/Full Stack Developer with 5+ years of experience conceptualizing and crafting digital products, helping businesses and non-profits expand their capacity for impact. <br /> Working in product strategy, facilitation and prototyping with a solid background in interface design and full stack development with frontend and backend technologies.</p>
+                    <p className="text-gray-600 mt-6 leading-relaxed">I'm a seasoned Product and UX Designer, as well as a Full Stack Developer, with over 5 years of experience transforming ideas into impactful digital products. I specialize in helping businesses and non-profits scale their potential for meaningful change by delivering thoughtful, user-centered solutions. </p>
+
+                    <p className="text-gray-600 mt-6 leading-relaxed">My expertise spans product strategy, facilitation, and prototyping, all backed by a strong foundation in interface design and frontend development. With a focus on creating intuitive and visually compelling experiences, I’m passionate about bridging the gap between design and technology to bring innovative products to life.</p>
 
                     <button type='button'
                         className="mt-6 bg-blue-600 hover:bg-transparent hover:text-blue-600 border-2 border-blue-600 transition-all text-white font-semibold text-sm tracking-wide rounded-md px-6 py-2.5">Download Resume</button>

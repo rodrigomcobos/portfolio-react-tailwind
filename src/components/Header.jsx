@@ -14,12 +14,12 @@ const Header = () => {
     };
 
     return (
-        <header className="text-slate-700 relative mx-full flex flex-col overflow-hidden px-4 py-4 lg:flex-row lg:items-center z-50 mt-4">
+        <header className="text-slate-700 bg-white  mx-full flex flex-col overflow-hidden px-4 py-4 lg:flex-row lg:items-center z-50 mt-4 sticky top-0">
             <a href="#" className="flex items-center whitespace-nowrap text-2xl font-black ml-4">
                 {/* <span className="mr-2 w-8">
                     <img src="/images/JOJj79gp_Djhwdp_ZOKLL.png" alt="" />
                 </span> */}
-                Rodrigo Portfolio
+                &lt;/Rodrigo&gt; <span className="text-blue-600">Portfolio</span>
             </a>
             <input type="checkbox" className="peer hidden" id="navbar-open" />
             <label className="absolute top-2 right-6 cursor-pointer lg:hidden" htmlFor="navbar-open">
@@ -29,11 +29,11 @@ const Header = () => {
             </label>
             <nav aria-label="Header Navigation" className="peer-checked:pt-8 peer-checked:max-h-60 flex max-h-0 w-full flex-col items-center overflow-hidden transition-all lg:ml-24 lg:max-h-full lg:flex-row">
                 <ul className="flex w-full flex-col items-center space-y-2 lg:flex-row lg:justify-center lg:space-y-0">
-                    <li className="lg:mr-12"><a className="rounded text-gray-700 transition focus:outline-none focus:ring-1 focus:ring-blue-700 focus:ring-offset-2" href="#">About</a></li>
-                    <li className="lg:mr-12"><a className="rounded text-gray-700 transition focus:outline-none focus:ring-1 focus:ring-blue-700 focus:ring-offset-2" href="#">Skills</a></li>
-                    <li className="lg:mr-12"><a className="rounded text-gray-700 transition focus:outline-none focus:ring-1 focus:ring-blue-700 focus:ring-offset-2" href="#">Qualification</a></li>
-                    <li className="lg:mr-12"><a className="rounded text-gray-700 transition focus:outline-none focus:ring-1 focus:ring-blue-700 focus:ring-offset-2" href="#">Portfolio</a></li>
-                    <li className="lg:mr-12"><a className="rounded text-gray-700 transition focus:outline-none focus:ring-1 focus:ring-blue-700 focus:ring-offset-2" href="#">Contact</a></li>
+                    <li className="lg:mr-12"><a className="rounded text-gray-700 transition focus:outline-none focus:ring-1 focus:ring-blue-700 focus:ring-offset-2" href="#about">About</a></li>
+                    <li className="lg:mr-12"><a className="rounded text-gray-700 transition focus:outline-none focus:ring-1 focus:ring-blue-700 focus:ring-offset-2" href="#skills">Skills</a></li>
+                    <li className="lg:mr-12"><a className="rounded text-gray-700 transition focus:outline-none focus:ring-1 focus:ring-blue-700 focus:ring-offset-2" href="#qualification">Qualification</a></li>
+                    <li className="lg:mr-12"><a className="rounded text-gray-700 transition focus:outline-none focus:ring-1 focus:ring-blue-700 focus:ring-offset-2" href="#portfolio">Portfolio</a></li>
+                    <li className="lg:mr-12"><a className="rounded text-gray-700 transition focus:outline-none focus:ring-1 focus:ring-blue-700 focus:ring-offset-2" href="#contact">Contact</a></li>
                 </ul>
                 <hr className="mt-4 w-full lg:hidden" />
 
