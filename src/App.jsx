@@ -4,7 +4,7 @@ import Footer from './components/Footer'
 import Hero from './components/Hero'
 import AboutMe from './components/AboutMe'
 import Skills from './components/Skills'
-import Services from './components/Services'
+import Qualification from './components/Qualification'
 import Portfolio from './components/Portfolio'
 import ContactMe from './components/ContactMe'
 
@@ -15,7 +15,7 @@ const App = () => {
       <Hero />
       <AboutMe />
       <Skills />
-      <Services />
+      <Qualification />
       <Portfolio />
       <ContactMe />
       <Footer />
