@@ -4,15 +4,15 @@ import { FaReact, FaHtml5, FaCss3Alt, FaJsSquare, FaNode, FaDatabase } from 'rea
 import { SiAdobephotoshop, SiAdobeillustrator } from "react-icons/si";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import GraphicDesign1 from '../assets/graphicDesign1.png';
-import GraphicDesign2 from '../assets/graphicDesign2.jpg';
-import GraphicDesign3 from '../assets/graphicDesign3.jpg';
-import GraphicDesign4 from '../assets/graphicDesign4.jpg';
-import GraphicDesign5 from '../assets/graphicDesign5.jpg';
-import GraphicDesign6 from '../assets/graphicDesign6.jpg';
-import GraphicDesign7 from '../assets/graphicDesign7.jpg';
-import GraphicDesign8 from '../assets/graphicDesign8.jpg';
-import GraphicDesign9 from '../assets/graphicDesign9.png';
+import GraphicDesign1 from '../assets/graphicdesign1.png';
+import GraphicDesign2 from '../assets/graphicdesign2.jpg';
+import GraphicDesign3 from '../assets/graphicdesign3.jpg';
+import GraphicDesign4 from '../assets/graphicdesign4.jpg';
+import GraphicDesign5 from '../assets/graphicdesign5.jpg';
+import GraphicDesign6 from '../assets/graphicdesign6.jpg';
+import GraphicDesign7 from '../assets/graphicdesign7.jpg';
+import GraphicDesign8 from '../assets/graphicdesign8.jpg';
+import GraphicDesign9 from '../assets/graphicdesign9.png';
 
 const cardData = [
     {
