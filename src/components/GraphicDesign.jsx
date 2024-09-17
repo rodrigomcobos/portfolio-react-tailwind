@@ -12,7 +12,7 @@ import GraphicDesign5 from '../assets/graphicdesign5.jpg';
 import GraphicDesign6 from '../assets/graphicdesign6.jpg';
 import GraphicDesign7 from '../assets/graphicdesign7.jpg';
 import GraphicDesign8 from '../assets/graphicdesign8.jpg';
-import GraphicDesign9 from '../assets/graphicdesign9.png';
+import GraphicDesign9 from '../assets/graphicdesign9.jpg';
 
 const cardData = [
     {
