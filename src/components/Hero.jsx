@@ -26,6 +26,10 @@ const Hero = () => {
                                 <h5 className="text-gray-800 font-bold text-4xl mb-2">10+</h5>
                                 <p className="text-gray-600">Projects</p>
                             </div>
+                            <div className="flex flex-col items-center text-center">
+                                <h5 className="text-gray-800 font-bold text-4xl mb-2">5+</h5>
+                                <p className="text-gray-600">Clients</p>
+                            </div>
                         </div>
                     </div>
                 </div>
