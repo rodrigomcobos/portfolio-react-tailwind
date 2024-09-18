@@ -19,9 +19,11 @@ const Header = () => {
                 <p className="text-base">Looking for a new team to join!</p>
 
                 <div className="flex gap-2">
-                    <button type="button" className="bg-white text-blue-500 py-1 px-3 rounded text-sm hover:bg-blue-800 hover:text-white transition duration-200">
-                        Hire Me Today
-                    </button>
+                    <a href="https://www.linkedin.com/in/rodrigomcobos/" target="_blank">
+                        <button type="button" className="bg-white text-blue-500 py-1 px-3 rounded text-sm hover:bg-blue-800 hover:text-white transition duration-200">
+                            Hire Me Today
+                        </button>
+                    </a>
                 </div>
             </section>
             <header className="text-slate-700 bg-white  mx-full flex flex-col overflow-hidden px-4 py-4 lg:flex-row lg:items-center z-50 mt-4 sticky top-0">
