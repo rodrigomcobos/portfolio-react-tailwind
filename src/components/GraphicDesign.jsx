@@ -25,11 +25,11 @@ const cardData = [
     },
     {
         id: 2,
-        title: 'Blueberry Hill Bakery Logo',
+        title: 'Blueberry Hill Bakery Graphics',
         description: 'Logo created to substitute the original Blueberry Hill Bakery logo. Made with the intention to reflect their brand identity which serves pastries.',
         image: GraphicDesign2,
         icons: [<SiAdobephotoshop />, <SiAdobeillustrator />],
-        link: '',
+        link: 'https://www.behance.net/gallery/153304735/Blueberry-Hill-Logo-and-Product-Packaging',
     },
     {
         id: 3,
@@ -37,7 +37,7 @@ const cardData = [
         description: 'Logo created for a small cafe that serves brazilian cuisine. Created using Brazil flag colors as its color scheme',
         image: GraphicDesign3,
         icons: [<SiAdobephotoshop />, <SiAdobeillustrator />],
-        link: '',
+        link: 'https://www.behance.net/rodrigocobos1',
     },
     {
         id: 4,
@@ -45,7 +45,7 @@ const cardData = [
         description: 'Logo created for a bounce house company in Dallas, TX. Color scheme was made to reflect a fun time with kids in conjunction with the DFW cityscape as part of it.',
         image: GraphicDesign4,
         icons: [<SiAdobephotoshop />, <SiAdobeillustrator />],
-        link: '',
+        link: 'https://www.behance.net/rodrigocobos1',
     },
     {
         id: 5,
@@ -53,7 +53,7 @@ const cardData = [
         description: 'Logo created for a performance wear company. Name based on Norwegian name for "giant". A personal project for an e-commerce store that I plan to launch.',
         image: GraphicDesign5,
         icons: [<SiAdobephotoshop />, <SiAdobeillustrator />],
-        link: '',
+        link: 'https://www.behance.net/rodrigocobos1',
     },
     {
         id: 6,
@@ -69,15 +69,15 @@ const cardData = [
         description: 'Logo created to substitute the original Amazon Xtreme Fishing logo. I have been working with this company for many years and logo has constantly enhanced.',
         image: GraphicDesign7,
         icons: [<SiAdobephotoshop />, <SiAdobeillustrator />],
-        link: '',
+        link: 'https://www.behance.net/rodrigocobos1',
     },
     {
         id: 8,
-        title: 'Brazil Fritters',
+        title: 'Brazil Fritters Graphics',
         description: 'Logo created for my personal business. A catering company that serves multiple brazilian dishes and fast food plates. Created with the intent of expanding the brand.',
         image: GraphicDesign8,
         icons: [<SiAdobephotoshop />, <SiAdobeillustrator />],
-        link: '',
+        link: 'https://www.behance.net/gallery/153311101/Brazil-Fritters-Branding-Development',
     },
     {
         id: 9,

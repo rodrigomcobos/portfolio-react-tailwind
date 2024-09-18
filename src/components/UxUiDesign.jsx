@@ -9,6 +9,7 @@ import UxUiDesign2 from '../assets/uxdesign2.png';
 import UxUiDesign3 from '../assets/uxdesign3.jpg';
 import UxUiDesign4 from '../assets/uxdesign4.jpg';
 import UxUiDesign5 from '../assets/uxdesign5.jpg';
+import UxUiDesign6 from '../assets/uxdesign6.png';
 
 const cardData = [
     {
@@ -17,7 +18,7 @@ const cardData = [
         description: 'App created using Figma. Restaurant app designed for a Japanese restaurant. Fully complete with most of the essential components. Check it out on my Figma.',
         image: UxUiDesign1,
         icons: [<FaFigma />, <SiAdobephotoshop />],
-        link: '',
+        link: 'https://www.figma.com/proto/DwQKu9cUD8sRGbjLzD01ms/Sushi-Restaurant-App-Project?page-id=73%3A2366&node-id=81-2367&node-type=canvas&viewport=574%2C528%2C0.21&t=t1FIfsxyztAdkQa0-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=84%3A3315',
     },
     {
         id: 2,
@@ -25,7 +26,7 @@ const cardData = [
         description: 'App created using Adobe Xd. Simple app with a sequential layout that is clear to use and paired with an apple watch app. Designed logo as well. Check out the demo.',
         image: UxUiDesign2,
         icons: [<SiAdobexd />, <SiAdobephotoshop />, <SiAdobeillustrator />],
-        link: '',
+        link: 'https://www.behance.net/gallery/154379931/Calorie-Counter-App',
     },
     {
         id: 3,
@@ -33,7 +34,7 @@ const cardData = [
         description: 'Website designed using Wix Editor and currently deployed. Client requested an overhaul to the website. Client has requested to convert into a hard coded website soon.',
         image: UxUiDesign3,
         icons: [<SiWix />, <SiAdobephotoshop />, <SiAdobeillustrator />],
-        link: '',
+        link: 'https://www.amazonxtremefishing.com/',
     },
     {
         id: 4,
@@ -41,7 +42,7 @@ const cardData = [
         description: 'Website created using Wix Editor. Custom made from scratch. Layout was defined after extensive research and testing comparing to competitor sites. Site not currently live.',
         image: UxUiDesign4,
         icons: [<SiWix />, <SiAdobephotoshop />, <SiAdobeillustrator />],
-        link: '',
+        link: 'https://brazilfritters.wixsite.com/brazilfritters',
     },
     {
         id: 5,
@@ -49,8 +50,16 @@ const cardData = [
         description: 'E-commerce site created using Wix Editor. Custom made from scratch. Layout was defined after extensive research and testing comparing to competitor sites. Site not live.',
         image: UxUiDesign5,
         icons: [<SiWix />, <SiAdobephotoshop />, <SiAdobeillustrator />],
-        link: '',
-    }
+        link: 'https://spectrecase.wixsite.com/spectrecase',
+    },
+    {
+        id: 6,
+        title: 'Destiny Worship Homepage',
+        description: 'Redesigned homepage for a local church. Layout was defined after extensive research and testing comparing to competitor sites. Site not live. Hired for redesign.',
+        image: UxUiDesign6,
+        icons: [<FaFigma />, <SiAdobephotoshop />, <SiAdobeillustrator />],
+        link: 'https://www.behance.net/gallery/208227739/Destiny-Worship-Homepage-Redesign',
+    },
 ];
 
 const UxUiDesign = () => {

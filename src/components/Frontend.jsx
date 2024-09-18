@@ -23,7 +23,7 @@ const cardData = [
         title: 'Brazilian Ecotourism Landing',
         description: 'Landing page responsive with all UI components and animated interactions. Created for a local tour company.',
         image: FrontendImg2,
-        icons: [<FaHtml5 />, <FaCss3Alt />],
+        icons: [<FaHtml5 />, <FaCss3Alt />, <FaJsSquare />],
         link: 'https://amazonas-ecoturismo.netlify.app',
     },
     {
@@ -31,7 +31,7 @@ const cardData = [
         title: 'REO MakeReady Landing',
         description: 'Responsive landing page with all UI components. Created for a local remodeling company.',
         image: FrontendImg3,
-        icons: [<FaHtml5 />, <FaCss3Alt />],
+        icons: [<FaHtml5 />, <FaCss3Alt />, <FaJsSquare />],
         link: 'https://reo-make-ready.netlify.app',
     },
 ];
@@ -87,6 +87,13 @@ const Frontend = () => {
                     </div>
                 ))}
             </Slider>
+            <div className='flex justify-center mt-16'>
+                <a href='https://github.com/rodrigomcobos' target='_blank'>
+                    <button className="mt-6 bg-blue-600 hover:bg-transparent hover:text-blue-600 border-2 border-blue-600 transition-all text-white font-semibold text-sm tracking-wide rounded-md px-6 py-2.5">
+                        View all Projects on GitHub
+                    </button>
+                </a>
+            </div>
         </div>
     );
 };
