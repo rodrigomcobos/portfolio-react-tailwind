@@ -179,7 +179,7 @@ const Qualification = () => {
             <p className="text-sm flex justify-center items-center font-bold text-blue-600 mb-2">
                 <span className="rotate-90 inline-block mr-2">|</span> QUALIFICATION
             </p>
-            <h2 className="text-gray-800 sm:text-4xl text-2xl font-extrabold text-center mb-16">
+            <h2 className="text-gray-800 sm:text-4xl text-3xl font-extrabold text-center mb-16">
                 Education & Work
             </h2>
 

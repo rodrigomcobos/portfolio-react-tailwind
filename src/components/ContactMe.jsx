@@ -48,7 +48,7 @@ const ContactMe = () => {
     return (
         <div id="contact" className='md:mt-44 mt-24'>
             <p className="text-sm flex justify-center items-center font-bold text-blue-600 mb-2"><span className="rotate-90 inline-block mr-2">|</span> CONTACT</p>
-            <h2 className="text-gray-800 sm:text-4xl text-2xl font-extrabold text-center mb-16">Let's Talk</h2>
+            <h2 className="text-gray-800 sm:text-4xl text-3xl font-extrabold text-center mb-16">Let's Talk</h2>
             <div className="grid sm:grid-cols-2 items-start gap-16 max-w-7xl max-md:max-w-md mx-auto mt-14 px-6">
                 <div>
                     <p className="text-md mt-4">Have a bold idea or a brand in need of development? Or maybe your current website could use a refresh or some strategic improvements? Whatever your vision may be, I am here to help bring it to life. Reach out to me and I would love to learn about your project and explore how we can collaborate together in making your business goals a reality.</p>

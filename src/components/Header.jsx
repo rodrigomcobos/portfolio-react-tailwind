@@ -19,7 +19,7 @@ const Header = () => {
                 <p className="text-base">Looking for a new team to join!</p>
 
                 <div className="flex gap-2">
-                    <button type="button" className="bg-white text-blue-500 py-1 px-3 rounded text-sm hover:bg-blue-200 hover:text-blue-600 transition duration-200">
+                    <button type="button" className="bg-white text-blue-500 py-1 px-3 rounded text-sm hover:bg-blue-800 hover:text-white transition duration-200">
                         Hire Me Today
                     </button>
                 </div>
