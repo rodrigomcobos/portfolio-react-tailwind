@@ -1,8 +1,50 @@
-import React from 'react'
+import React, { useState } from 'react';
+import emailjs from 'emailjs-com';
 import { FaLinkedinIn, FaBehance, FaGithub } from 'react-icons/fa';
 
 
 const ContactMe = () => {
+    const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+    const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+    const userId = import.meta.env.VITE_EMAILJS_USER_ID;
+
+
+    const [formData, setFormData] = useState({
+        name: '',
+        email: '',
+        subject: '',
+        message: ''
+    });
+
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        setFormData({
+            ...formData,
+            [name]: value
+        });
+    };
+
+    const sendEmail = (e) => {
+        e.preventDefault();
+
+        emailjs.sendForm(
+            import.meta.env.VITE_EMAILJS_SERVICE_ID,   // Your Service ID
+            import.meta.env.VITE_EMAILJS_TEMPLATE_ID,  // Your Template ID
+            e.target,
+            import.meta.env.VITE_EMAILJS_USER_ID       // Your User ID
+        )
+            .then((result) => {
+                alert('Message sent successfully!');
+                console.log(result.text);
+            }, (error) => {
+                alert('Failed to send message, please try again.');
+                console.log(error.text);
+            });
+
+        e.target.reset();  // Clear form after submission
+    };
+
+
     return (
         <div id="contact" className='md:mt-44 mt-24'>
             <p className="text-sm flex justify-center items-center font-bold text-blue-600 mb-2"><span className="rotate-90 inline-block mr-2">|</span> CONTACT</p>
@@ -79,18 +121,45 @@ const ContactMe = () => {
                     </div>
                 </div>
 
-                <form className="ml-auto space-y-4">
-                    <input type='text' placeholder='Name'
-                        className="w-full rounded-md py-3 px-4 bg-gray-100 text-gray-800 text-sm outline-blue-500 focus:bg-transparent" />
-                    <input type='email' placeholder='Email'
-                        className="w-full rounded-md py-3 px-4 bg-gray-100 text-gray-800 text-sm outline-blue-500 focus:bg-transparent" />
-                    <input type='text' placeholder='Subject'
-                        className="w-full rounded-md py-3 px-4 bg-gray-100 text-gray-800 text-sm outline-blue-500 focus:bg-transparent" />
-                    <textarea placeholder='Message' rows="6"
-                        className="w-full rounded-md px-4 bg-gray-100 text-gray-800 text-sm pt-3 outline-blue-500 focus:bg-transparent"></textarea>
-                    <button type='button'
-                        className="bg-blue-600 hover:bg-transparent hover:text-blue-600 border-2 border-blue-600 transition-all text-white font-semibold text-sm tracking-wide rounded-md px-6 py-2.5">Send</button>
+                <form onSubmit={sendEmail} className="ml-auto space-y-4">
+                    <input
+                        type="text"
+                        name="name"
+                        placeholder="Name"
+                        onChange={handleChange}
+                        value={formData.name}
+                        className="w-full rounded-md py-3 px-4 bg-gray-100 text-gray-800 text-sm outline-blue-500 focus:bg-transparent"
+                    />
+                    <input
+                        type="email"
+                        name="email"
+                        placeholder="Email"
+                        onChange={handleChange}
+                        value={formData.email}
+                        className="w-full rounded-md py-3 px-4 bg-gray-100 text-gray-800 text-sm outline-blue-500 focus:bg-transparent"
+                    />
+                    <input
+                        type="text"
+                        name="subject"
+                        placeholder="Subject"
+                        onChange={handleChange}
+                        value={formData.subject}
+                        className="w-full rounded-md py-3 px-4 bg-gray-100 text-gray-800 text-sm outline-blue-500 focus:bg-transparent"
+                    />
+                    <textarea
+                        name="message"
+                        placeholder="Message"
+                        rows="6"
+                        onChange={handleChange}
+                        value={formData.message}
+                        className="w-full rounded-md px-4 bg-gray-100 text-gray-800 text-sm pt-3 outline-blue-500 focus:bg-transparent"
+                    />
+                    <button type="submit"
+                        className="bg-blue-600 hover:bg-transparent hover:text-blue-600 border-2 border-blue-600 transition-all text-white font-semibold text-sm tracking-wide rounded-md px-6 py-2.5">
+                        Send
+                    </button>
                 </form>
+
             </div>
         </div>
 
