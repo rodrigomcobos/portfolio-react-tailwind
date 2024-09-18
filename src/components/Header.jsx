@@ -14,7 +14,7 @@ const Header = () => {
     };
 
     return (
-        <div>
+        <div className='sticky top-0 z-50 bg-white'>
             <section className="flex gap-4 items-center justify-center text-center bg-blue-600 text-white px-6 py-2 font-[sans-serif]">
                 <p className="text-base">Looking for a new team to join!</p>
 
@@ -26,11 +26,8 @@ const Header = () => {
                     </a>
                 </div>
             </section>
-            <header className="text-slate-700 bg-white  mx-full flex flex-col overflow-hidden px-4 py-4 lg:flex-row lg:items-center z-50 mt-4 sticky top-0">
+            <header className="text-slate-700  mx-full flex flex-col overflow-hidden px-4 py-4 lg:flex-row lg:items-center z-50 mt-4 sticky top-0">
                 <a href="#" className="flex items-center whitespace-nowrap text-2xl font-black ml-4">
-                    {/* <span className="mr-2 w-8">
-                    <img src="/images/JOJj79gp_Djhwdp_ZOKLL.png" alt="" />
-                </span> */}
                     &lt;/Rodrigo&gt; <span className="text-blue-600">Portfolio</span>
                 </a>
                 <input type="checkbox" className="peer hidden" id="navbar-open" />
