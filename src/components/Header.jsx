@@ -15,12 +15,12 @@ const Header = () => {
 
     return (
         <div className='sticky top-0 z-50 bg-white'>
-            <section className="flex gap-4 items-center justify-center text-center bg-blue-600 text-white px-6 py-2 font-[sans-serif]">
+            <section className="flex gap-4 items-center justify-center text-center bg-blue-800 text-white px-6 py-2 font-[sans-serif]">
                 <p className="text-base">Looking for a new team to join!</p>
 
                 <div className="flex gap-2">
                     <a href="https://www.linkedin.com/in/rodrigomcobos/" target="_blank">
-                        <button type="button" className="bg-white text-blue-500 py-1 px-3 rounded text-sm hover:bg-blue-800 hover:text-white transition duration-200">
+                        <button type="button" className="bg-white text-blue-800 py-1 px-3 rounded text-sm hover:bg-blue-900 hover:text-white transition duration-200">
                             Hire Me Today
                         </button>
                     </a>
@@ -28,7 +28,7 @@ const Header = () => {
             </section>
             <header className="text-slate-700  mx-full flex flex-col overflow-hidden px-4 py-4 lg:flex-row lg:items-center z-50 mt-4 sticky top-0">
                 <a href="#" className="flex items-center whitespace-nowrap text-2xl font-black ml-4">
-                    &lt;/Rodrigo&gt; <span className="text-blue-600">Portfolio</span>
+                    &lt;/Rodrigo&gt; <span className="text-blue-800">Portfolio</span>
                 </a>
                 <input type="checkbox" className="peer hidden" id="navbar-open" />
                 <label className="absolute top-4 right-8 cursor-pointer lg:hidden" htmlFor="navbar-open">
@@ -47,13 +47,13 @@ const Header = () => {
                     <hr className="mt-4 w-full lg:hidden" />
 
                     <div className="my-4 mx-4 flex items-center space-x-6 lg:my-0 lg:ml-auto lg:space-x-8 lg:space-y-0">
-                        <a href="https://www.linkedin.com/in/rodrigomcobos/" target="_blank" rel="noreferrer" className="hover:text-blue-700 transition duration-300">
+                        <a href="https://www.linkedin.com/in/rodrigomcobos/" target="_blank" name="linkedin website" aria-label='visit my linkedin' rel="noreferrer" className="hover:text-blue-700 transition duration-300">
                             <FaLinkedinIn size={24} />
                         </a>
-                        <a href="https://www.behance.net/rodrigocobos1" target="_blank" rel="noreferrer" className="hover:text-blue-400 transition duration-300">
+                        <a href="https://www.behance.net/rodrigocobos1" target="_blank" name="behance website" aria-label='visit my behance' rel="noreferrer" className="hover:text-blue-400 transition duration-300">
                             <FaBehance size={24} />
                         </a>
-                        <a href="https://github.com/rodrigomcobos/" target="_blank" rel="noreferrer" className="hover:text-purple-500 transition duration-300">
+                        <a href="https://github.com/rodrigomcobos/" target="_blank" name="github website" aria-label='visit my github' rel="noreferrer" className="hover:text-purple-500 transition duration-300">
                             <FaGithub size={24} />
                         </a>
                     </div>

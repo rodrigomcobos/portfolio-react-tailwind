@@ -122,12 +122,12 @@ const Qualification = () => {
                             <div className="bg-white shadow-md rounded-lg overflow-hidden mb-6">
                                 <div className="p-6 pb-8">
                                     <h3 className="text-2xl font-bold text-gray-800 mb-2">{item.title}</h3>
-                                    <p className="text-lg text-blue-600 mb-4">{item.where}</p>
-                                    <div className="flex items-center text-gray-600">
+                                    <p className="text-lg text-blue-800 mb-4">{item.where}</p>
+                                    <div className="flex items-center text-gray-800">
                                         <FaCalendarAlt className="mr-2" />
                                         <span>{item.when}</span>
                                     </div>
-                                    <p className="text-gray-600 mt-4">{item.description}</p>
+                                    <p className="text-gray-800 mt-4">{item.description}</p>
                                 </div>
                                 <div className="flex justify-center">
                                     <img
@@ -149,12 +149,12 @@ const Qualification = () => {
                             {/* Left Side - 2/3 */}
                             <div className="w-full md:w-2/3 p-6 pb-8">
                                 <h3 className="text-2xl font-bold text-gray-800 mb-2">{item.title}</h3>
-                                <p className="text-lg text-blue-600 mb-4">{item.where}</p>
-                                <div className="flex items-center text-gray-600">
+                                <p className="text-lg text-blue-800 mb-4">{item.where}</p>
+                                <div className="flex items-center text-gray-800">
                                     <FaCalendarAlt className="mr-2" />
                                     <span>{item.when}</span>
                                 </div>
-                                <p className="text-gray-600 mt-4">{item.description}</p>
+                                <p className="text-gray-800 mt-4">{item.description}</p>
                             </div>
 
                             {/* Right Side - 1/3 */}
@@ -176,7 +176,7 @@ const Qualification = () => {
 
     return (
         <div id="qualification" className="max-w-7xl max-md:max-w-md mx-auto md:mt-52 mt-24 px-6">
-            <p className="text-sm flex justify-center items-center font-bold text-blue-600 mb-2">
+            <p className="text-sm flex justify-center items-center font-bold text-blue-800 mb-2">
                 <span className="rotate-90 inline-block mr-2">|</span> QUALIFICATION
             </p>
             <h2 className="text-gray-800 sm:text-4xl text-3xl font-extrabold text-center mb-16">
@@ -187,12 +187,12 @@ const Qualification = () => {
                 <div className="relative right-0">
                     {/* Tabs List */}
                     <ul className="relative flex flex-wrap px-1.5 py-1.5 list-none rounded-md bg-slate-100" role="list">
-                        <li className="flex-auto text-center">
+                        <li role='presentation' className="flex-auto text-center">
                             <a
                                 className={`flex items-center justify-center w-full px-0 py-2 text-lg font-semibold transition-all ease-in-out border-0 rounded-md cursor-pointer 
-                                ${activeTab === 'education' ? 'text-white font-bold bg-blue-600' : 'text-slate-600'}`}
+                                ${activeTab === 'education' ? 'text-white font-bold bg-blue-800' : 'text-slate-800'}`}
                                 onClick={() => setActiveTab('education')}
-                                role="tab"
+                                role="tab education"
                             >
                                 <FaGraduationCap className="inline-block mr-2" />
                                 Education
@@ -201,9 +201,9 @@ const Qualification = () => {
                         <li className="flex-auto text-center">
                             <a
                                 className={`flex items-center justify-center w-full px-0 py-2 text-lg font-semibold transition-all ease-in-out border-0 rounded-md cursor-pointer 
-                                ${activeTab === 'work' ? 'text-white font-bold bg-blue-600' : 'text-slate-600'}`}
+                                ${activeTab === 'work' ? 'text-white font-bold bg-blue-800' : 'text-slate-800'}`}
                                 onClick={() => setActiveTab('work')}
-                                role="tab"
+                                role="tab work"
                             >
                                 <FaBriefcase className="inline-block mr-2" />
                                 Work History
@@ -212,9 +212,9 @@ const Qualification = () => {
                         <li className="flex-auto text-center">
                             <a
                                 className={`flex items-center justify-center w-full px-0 py-2 text-lg font-semibold transition-all ease-in-out border-0 rounded-md cursor-pointer 
-                                ${activeTab === 'voluntary' ? 'text-white font-bold bg-blue-600' : 'text-slate-600'}`}
+                                ${activeTab === 'voluntary' ? 'text-white font-bold bg-blue-800' : 'text-slate-800'}`}
                                 onClick={() => setActiveTab('voluntary')}
-                                role="tab"
+                                role="tab voluntary"
                             >
                                 <MdVolunteerActivism className="inline-block mr-2" />
                                 Volunteer Work

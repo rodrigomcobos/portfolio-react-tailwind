@@ -36,3 +36,7 @@ html {
   .slick-dots .slick-active button:before {
     color: transparent !important;
   }
+
+  .slick-arrows {
+    display: none !important;
+  }

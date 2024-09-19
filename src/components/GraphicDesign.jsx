@@ -95,6 +95,8 @@ const GraphicDesign = () => {
         dotsClass: 'slick-dots',
         infinite: true,
         speed: 600,
+        accessibility: true,
+        defaults: true,
         slidesToShow: 3,
         slidesToScroll: 1,
         arrows: true,
@@ -126,16 +128,16 @@ const GraphicDesign = () => {
                         <div className="bg-white rounded-lg shadow-md p-6 flex flex-col items-center justify-between h-full">
                             <img src={card.image} alt={card.title} className="w-full h-56 object-cover mb-4 rounded-md" />
                             <h3 className="text-xl font-semibold mb-2 text-center">{card.title}</h3>
-                            <p className="text-gray-600 mb-8 text-center">{card.description}</p>
+                            <p className="text-gray-800 mb-8 text-center">{card.description}</p>
                             <div className="flex space-x-2 mb-4">
                                 {card.icons.map((icon, index) => (
-                                    <span key={index} className="text-3xl text-blue-500">
+                                    <span key={index} className="text-3xl text-blue-800">
                                         {icon}
                                     </span>
                                 ))}
                             </div>
-                            <a href={card.link} target='_blank'>
-                                <button className="mt-6 bg-blue-600 hover:bg-transparent hover:text-blue-600 border-2 border-blue-600 transition-all text-white font-semibold text-sm tracking-wide rounded-md px-6 py-2.5">
+                            <a href={card.link} target='_blank' aria-label='visit the demo on behance' aria-hidden="false">
+                                <button aria-hidden="false" className="mt-6 bg-blue-800 hover:bg-transparent hover:text-blue-800 border-2 border-blue-800 transition-all text-white font-semibold text-sm tracking-wide rounded-md px-6 py-2.5">
                                     View Demo
                                 </button>
                             </a>
@@ -145,7 +147,7 @@ const GraphicDesign = () => {
             </Slider>
             <div className='flex justify-center mt-16'>
                 <a href='https://www.behance.net/rodrigocobos1' target='_blank'>
-                    <button className="mt-6 bg-blue-600 hover:bg-transparent hover:text-blue-600 border-2 border-blue-600 transition-all text-white font-semibold text-sm tracking-wide rounded-md px-6 py-2.5">
+                    <button className="mt-6 bg-blue-800 hover:bg-transparent hover:text-blue-800 border-2 border-blue-800 transition-all text-white font-semibold text-sm tracking-wide rounded-md px-6 py-2.5">
                         View all Projects on Behance
                     </button>
                 </a>
