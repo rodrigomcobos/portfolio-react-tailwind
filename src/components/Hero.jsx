@@ -13,8 +13,8 @@ const Hero = () => {
 
                     <p className="text-gray-800 mt-6 leading-relaxed">My expertise spans product strategy, facilitation, and prototyping, all backed by a strong foundation in interface design and frontend development. With a focus on creating intuitive and visually compelling experiences, I’m passionate about bridging the gap between design and technology to bring innovative products to life.</p>
 
-                    <button type='button'
-                        className="mt-6 bg-blue-800 hover:bg-transparent hover:text-blue-800 border-2 border-blue-800 transition-all text-white font-semibold text-sm tracking-wide rounded-md px-6 py-2.5">Download Resume</button>
+                    <a href="https://docs.google.com/document/d/1DTlEQ7u_Cxvb628AhgTPPxFMrgiJjsg7Hn1L4K2VDnQ/edit?usp=sharing" target="_blank" className="mt-6 bg-blue-800 hover:bg-transparent hover:text-blue-800 border-2 border-blue-800 transition-all text-white font-semibold text-sm tracking-wide rounded-md px-6 py-2.5">View Resume</a>
+
 
                     <div className="mt-12 w-fit">
                         <div className="flex flex-row justify-center align-middle items-center gap-12">
