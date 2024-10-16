@@ -1,5 +1,12 @@
-import React from 'react'
-import ProfileImg from '../assets/profile2.png'
+import Image from 'react-image-webp';
+import ProfileImgPng from '../assets/profile2.png';
+import ProfileImgWebp from '../assets/profile2.webp';
+import BehanceLogoPng from '../assets/behancelogo.png';
+import BehanceLogoWebp from '../assets/behancelogo.webp';
+import GithubLogoPng from '../assets/githublogo.png';
+import GithubLogoWebp from '../assets/githublogo.webp';
+import LinkedInLogoPng from '../assets/linkedlogo.png';
+import LinkedInLogoWebp from '../assets/linkedlogo.webp';
 
 const AboutMe = () => {
     return (
@@ -18,15 +25,16 @@ const AboutMe = () => {
                     <section className="mt-8">
                         <p className="text-gray-800 font-bold text-base mb-6">Follow me on Social Media</p>
                         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 items-center sm:justify-center">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/2/29/GitHub_logo_2013.svg" className="w-20 mx-auto" alt="github-logo" />
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/0/01/LinkedIn_Logo.svg" className="w-28 mx-auto" alt="linkedin-logo" />
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Behance_logo.svg/1024px-Behance_logo.svg.png" className="w-28 mx-auto" alt="behance-logo" />
+                            <Image src={GithubLogoPng} webp={GithubLogoWebp} className="w-20 mx-auto" alt="github-logo" />
+                            <Image src={LinkedInLogoPng} webp={LinkedInLogoWebp} className="w-28 mx-auto" alt="linkedin-logo" />
+                            <Image src={BehanceLogoPng} webp={BehanceLogoWebp} className="w-28 mx-auto" alt="behance-logo" />
+
                         </div>
                     </section>
                 </section>
 
                 <section className="lg:h-[550px] md:h-[450px] hidden md:flex items-center relative max-md:before:hidden before:absolute before:bg-blue-200 before:h-full before:w-3/4 before:right-0 before:z-0">
-                    <img src={ProfileImg} className="rounded-md lg:w-3/4 md:w-11/12 z-20 relative" alt="Profile Image" />
+                    <Image src={ProfileImgPng} webp={ProfileImgWebp} className="rounded-md lg:w-3/4 md:w-11/12 z-20 relative" alt="Profile Image" loading="lazy" />
                 </section>
 
             </div>
