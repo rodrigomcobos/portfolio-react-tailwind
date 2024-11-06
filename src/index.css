@@ -2,10 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
-html {
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
     scroll-behavior: smooth;
-  }
-
+}
 
 
 /* Style the dots container */

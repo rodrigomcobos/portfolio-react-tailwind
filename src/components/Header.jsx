@@ -1,27 +1,23 @@
 import React, { useState, useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import { FaLinkedinIn, FaBehance, FaGithub } from 'react-icons/fa';
+import { SlMenu } from "react-icons/sl";
 
 const Header = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [prevScrollPos, setPrevScrollPos] = useState(0);
     const [visible, setVisible] = useState(true);
+    const location = useLocation();
 
     useEffect(() => {
         const handleScroll = () => {
             const currentScrollPos = window.scrollY;
-
-            // Determine if we're scrolling up or down
             const isScrollingDown = currentScrollPos > prevScrollPos;
-
-            // Update visibility based on scroll direction and position
             setVisible(!isScrollingDown || currentScrollPos < 10);
-
-            // Update the previous scroll position
             setPrevScrollPos(currentScrollPos);
         };
 
         window.addEventListener('scroll', handleScroll);
-
         return () => window.removeEventListener('scroll', handleScroll);
     }, [prevScrollPos]);
 
@@ -34,52 +30,101 @@ const Header = () => {
     };
 
     return (
-        <div className={`sticky top-0 z-50 bg-white transition-transform duration-300 ${visible ? 'translate-y-0' : '-translate-y-full'}`}>
-            <section className="flex gap-4 items-center justify-center text-center bg-blue-800 text-white px-6 py-2 font-[sans-serif]">
-                <p className="text-base">Looking for a new team to join!</p>
-
-                <div className="flex gap-2">
-                    <a href="https://www.linkedin.com/in/rodrigomcobos/" target="_blank">
-                        <button type="button" className="bg-white text-blue-800 py-1 px-3 rounded text-sm hover:bg-blue-900 hover:text-white transition duration-200">
-                            Hire Me Today
-                        </button>
-                    </a>
-                </div>
-            </section>
-            <header className="text-slate-700 mx-full flex flex-col overflow-hidden px-4 py-4 lg:flex-row lg:items-center z-50 sticky top-0">
-                <a href="#" className="flex items-center whitespace-nowrap text-2xl font-black ml-4">
-                    &lt;/Rodrigo&gt; <span className="text-blue-800">Portfolio</span>
-                </a>
-                <input type="checkbox" className="peer hidden" id="navbar-open" />
-                <label className="absolute top-4 right-8 cursor-pointer lg:hidden" htmlFor="navbar-open">
-                    <svg className="h-8 w-8" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 22 22" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M4 6h16M4 12h16M4 18h16"></path>
-                    </svg>
-                </label>
-                <nav aria-label="Header Navigation" className="peer-checked:pt-8 peer-checked:max-h-60 flex max-h-0 w-full flex-col items-center overflow-hidden transition-all lg:ml-24 lg:max-h-full lg:flex-row">
-                    <ul className="flex w-full flex-col items-center space-y-2 lg:flex-row lg:justify-center lg:space-y-0">
-                        <li className="lg:mr-12"><a className="rounded text-gray-700 transition focus:outline-none focus:ring-1 focus:ring-blue-700 focus:ring-offset-2" href="#about">About</a></li>
-                        <li className="lg:mr-12"><a className="rounded text-gray-700 transition focus:outline-none focus:ring-1 focus:ring-blue-700 focus:ring-offset-2" href="#skills">Skills</a></li>
-                        <li className="lg:mr-12"><a className="rounded text-gray-700 transition focus:outline-none focus:ring-1 focus:ring-blue-700 focus:ring-offset-2" href="#qualification">Qualification</a></li>
-                        <li className="lg:mr-12"><a className="rounded text-gray-700 transition focus:outline-none focus:ring-1 focus:ring-blue-700 focus:ring-offset-2" href="#portfolio">Portfolio</a></li>
-                        <li className="lg:mr-12"><a className="rounded text-gray-700 transition focus:outline-none focus:ring-1 focus:ring-blue-700 focus:ring-offset-2" href="#contact">Contact</a></li>
-                    </ul>
-                    <hr className="mt-4 w-full lg:hidden" />
-
-                    <div className="my-4 mx-4 flex items-center space-x-6 lg:my-0 lg:ml-auto lg:space-x-8 lg:space-y-0">
-                        <a href="https://www.linkedin.com/in/rodrigomcobos/" target="_blank" name="linkedin website" aria-label='visit my linkedin' rel="noreferrer" className="hover:text-blue-700 transition duration-300">
-                            <FaLinkedinIn size={24} />
-                        </a>
-                        <a href="https://www.behance.net/rodrigocobos1" target="_blank" name="behance website" aria-label='visit my behance' rel="noreferrer" className="hover:text-blue-400 transition duration-300">
-                            <FaBehance size={24} />
-                        </a>
-                        <a href="https://github.com/rodrigomcobos/" target="_blank" name="github website" aria-label='visit my github' rel="noreferrer" className="hover:text-purple-500 transition duration-300">
-                            <FaGithub size={24} />
+        <>
+            <div className={`sticky top-0 z-50 w-full bg-white transition-transform duration-300 ${visible ? 'translate-y-0' : '-translate-y-full'}`}>
+                <section className="flex flex-wrap gap-4 items-center justify-center text-center bg-blue-800 text-white px-4 py-2">
+                    <p className="text-base">Looking for a new team to join!</p>
+                    <div className="flex gap-2">
+                        <a href="https://www.linkedin.com/in/rodrigomcobos/" target="_blank" rel="noreferrer">
+                            <button type="button" className="bg-white text-blue-800 py-1 px-3 rounded text-sm hover:bg-blue-900 hover:text-white transition duration-200">
+                                Hire Me Today
+                            </button>
                         </a>
                     </div>
-                </nav>
-            </header>
-        </div>
+                </section>
+
+                <header className="text-slate-700 w-full px-4 py-4">
+                    <div className="max-w-7xl mx-auto flex flex-col lg:flex-row lg:items-center">
+                        <div className="flex justify-between items-center">
+                            <Link to="/" className="flex items-center text-2xl font-black">
+                                &lt;/Rodrigo&gt; <span className="text-blue-800">Portfolio</span>
+                            </Link>
+                            <button
+                                className="lg:hidden p-2"
+                                onClick={handleMenuToggle}
+                                aria-label="Toggle menu"
+                            >
+                                <SlMenu className="w-6 h-6" />
+                            </button>
+                        </div>
+
+                        <nav className={`${isMenuOpen ? 'block' : 'hidden'} lg:flex lg:items-center lg:justify-end lg:flex-1 mt-4 lg:mt-0`}>
+                            <ul className="flex flex-col lg:flex-row items-center space-y-2 lg:space-y-0">
+                                {location.pathname === '/' ? (
+                                    <>
+                                        <li className="lg:ml-12"><a className="rounded text-gray-700 transition focus:outline-none focus:ring-1 focus:ring-blue-700 focus:ring-offset-2" href="#about" onClick={handleMenuClose}>About</a></li>
+                                        <li className="lg:ml-12"><a className="rounded text-gray-700 transition focus:outline-none focus:ring-1 focus:ring-blue-700 focus:ring-offset-2" href="#skills" onClick={handleMenuClose}>Skills</a></li>
+                                        <li className="lg:ml-12"><a className="rounded text-gray-700 transition focus:outline-none focus:ring-1 focus:ring-blue-700 focus:ring-offset-2" href="#qualification" onClick={handleMenuClose}>Qualification</a></li>
+                                        <li className="lg:ml-12"><a className="rounded text-gray-700 transition focus:outline-none focus:ring-1 focus:ring-blue-700 focus:ring-offset-2" href="#portfolio" onClick={handleMenuClose}>Portfolio</a></li>
+                                        <li className="lg:ml-12"><a className="rounded text-gray-700 transition focus:outline-none focus:ring-1 focus:ring-blue-700 focus:ring-offset-2" href="#contact" onClick={handleMenuClose}>Contact</a></li>
+                                    </>
+                                ) : (
+                                    <li className="lg:ml-12">
+                                        <Link
+                                            to="/"
+                                            className="rounded text-gray-700 transition focus:outline-none focus:ring-1 focus:ring-blue-700 focus:ring-offset-2"
+                                            onClick={handleMenuClose}
+                                        >
+                                            Home
+                                        </Link>
+                                    </li>
+                                )}
+                                <li className="lg:ml-12">
+                                    <Link
+                                        to="/projects"
+                                        className={`rounded-xl p-2 transition duration-200 ${location.pathname === '/projects' ? 'bg-blue-800 text-white' : 'text-gray-700'}`}
+                                        onClick={handleMenuClose}
+                                    >
+                                        Projects
+                                    </Link>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </header>
+            </div>
+
+            {/* Floating Social Media Icons */}
+            <div className="fixed bottom-6 right-6 flex flex-col gap-4 z-50">
+                <a
+                    href="https://www.linkedin.com/in/rodrigomcobos/"
+                    target="_blank"
+                    rel="noreferrer"
+                    aria-label="visit my linkedin"
+                    className="bg-blue-800 text-white p-3 rounded-full shadow-lg hover:bg-blue-900 transition-colors duration-300 flex items-center justify-center"
+                >
+                    <FaLinkedinIn size={20} />
+                </a>
+                <a
+                    href="https://www.behance.net/rodrigocobos1"
+                    target="_blank"
+                    rel="noreferrer"
+                    aria-label="visit my behance"
+                    className="bg-blue-800 text-white p-3 rounded-full shadow-lg hover:bg-blue-900 transition-colors duration-300 flex items-center justify-center"
+                >
+                    <FaBehance size={20} />
+                </a>
+                <a
+                    href="https://github.com/rodrigomcobos/"
+                    target="_blank"
+                    rel="noreferrer"
+                    aria-label="visit my github"
+                    className="bg-blue-800 text-white p-3 rounded-full shadow-lg hover:bg-blue-900 transition-colors duration-300 flex items-center justify-center"
+                >
+                    <FaGithub size={20} />
+                </a>
+            </div>
+        </>
     );
 };
 

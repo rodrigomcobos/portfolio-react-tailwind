@@ -92,80 +92,93 @@ const buttonVariants = {
 
 const CardComponent = ({ card }) => (
     <motion.div
-        className="p-4"
+        className="p-4 h-full"
         variants={cardVariants}
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
     >
         <motion.div
-            className="bg-white rounded-lg shadow-md p-6 flex flex-col items-center justify-between h-full"
+            className="bg-white rounded-lg shadow-md p-6 flex flex-col h-[550px]" // Fixed height
             whileHover={{ y: -5 }}
             transition={{ duration: 0.3 }}
         >
+            {/* Image container with fixed height */}
             <motion.div
                 initial={{ opacity: 0, scale: 0.8 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.5 }}
                 whileHover={{ scale: 1.02 }}
-                className="w-full"
+                className="w-full h-[224px]" // Fixed height for image container
             >
                 <Image
                     src={card.image}
                     webp={card.imageWebp}
                     alt={card.title}
-                    className="w-full h-56 object-cover mb-4 rounded-md"
+                    className="w-full h-full object-cover rounded-md"
                     loading="lazy"
                 />
             </motion.div>
-            <motion.h3
-                className="text-xl font-semibold mb-2 text-center"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.2 }}
-            >
-                {card.title}
-            </motion.h3>
-            <motion.p
-                className="text-gray-800 text-center mb-8"
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                transition={{ duration: 0.5, delay: 0.3 }}
-            >
-                {card.description}
-            </motion.p>
-            <div className="flex space-x-2 mb-4">
-                {card.icons.map((icon, index) => (
-                    <motion.span
-                        key={index}
-                        className="text-3xl text-blue-800"
-                        variants={iconVariants}
-                        initial="hidden"
-                        whileInView="visible"
+
+            {/* Content container with flex grow */}
+            <div className="flex flex-col flex-grow">
+                <motion.h3
+                    className="text-xl font-semibold mt-4 mb-2 text-center"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5, delay: 0.2 }}
+                >
+                    {card.title}
+                </motion.h3>
+
+                <motion.p
+                    className="text-gray-800 text-center flex-grow"
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    transition={{ duration: 0.5, delay: 0.3 }}
+                >
+                    {card.description}
+                </motion.p>
+
+                {/* Bottom section with fixed positioning */}
+                <div className="mt-auto">
+                    <div className="flex justify-center space-x-2 mb-4">
+                        {card.icons.map((icon, index) => (
+                            <motion.span
+                                key={index}
+                                className="text-3xl text-blue-800"
+                                variants={iconVariants}
+                                initial="hidden"
+                                whileInView="visible"
+                                whileHover="hover"
+                                viewport={{ once: true }}
+                                custom={index}
+                            >
+                                {icon}
+                            </motion.span>
+                        ))}
+                    </div>
+
+                    <motion.a
+                        href={card.link}
+                        target='_blank'
+                        rel="noopener noreferrer"
+                        aria-label='visit demo website'
                         whileHover="hover"
-                        viewport={{ once: true }}
-                        custom={index}
+                        whileTap="tap"
+                        variants={buttonVariants}
+                        className="block text-center"
                     >
-                        {icon}
-                    </motion.span>
-                ))}
+                        <button className="bg-blue-800 hover:bg-transparent hover:text-blue-800 border-2 border-blue-800 transition-all text-white font-semibold text-sm tracking-wide rounded-md px-6 py-2.5">
+                            View Demo
+                        </button>
+                    </motion.a>
+                </div>
             </div>
-            <motion.a
-                href={card.link}
-                target='_blank'
-                rel="noopener noreferrer"
-                aria-label='visit demo website'
-                whileHover="hover"
-                whileTap="tap"
-                variants={buttonVariants}
-            >
-                <button className="mt-6 bg-blue-800 hover:bg-transparent hover:text-blue-800 border-2 border-blue-800 transition-all text-white font-semibold text-sm tracking-wide rounded-md px-6 py-2.5">
-                    View Demo
-                </button>
-            </motion.a>
         </motion.div>
     </motion.div>
 );
+
 
 const Frontend = () => {
     const settings = {
@@ -203,6 +216,28 @@ const Frontend = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
         >
+            <motion.section
+                id="qualification"
+                className="max-w-9xl max-md:max-w-md mx-auto md:mt-52 mt-24 px-6"
+                initial={{ opacity: 0, y: -20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5 }}
+            >
+                <p className="text-sm flex justify-center items-center font-bold text-blue-800 mb-2">
+                    <span className="rotate-90 inline-block mr-2">|</span> PORTFOLIO
+                </p>
+                <motion.h2
+                    className="text-gray-800 sm:text-4xl text-2xl font-extrabold text-center mb-16"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: 0.2 }}
+                >
+                    Front End Projects
+                </motion.h2>
+            </motion.section>
+
             <Slider {...settings}>
                 {cardData.map((card) => (
                     <CardComponent key={card.id} card={card} />

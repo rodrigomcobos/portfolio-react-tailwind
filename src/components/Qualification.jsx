@@ -11,7 +11,6 @@ import 'swiper/css';
 const Qualification = () => {
     const [activeTab, setActiveTab] = useState('education');
 
-    // Animation variants for cards
     const cardVariants = {
         hidden: {
             opacity: 0,
@@ -34,12 +33,24 @@ const Qualification = () => {
         }
     };
 
+    const containerVariants = {
+        hidden: { opacity: 0 },
+        visible: {
+            opacity: 1,
+            transition: {
+                staggerChildren: 0.1
+            }
+        },
+        exit: { opacity: 0 }
+    };
+
     const renderCards = (tab) => (
         <motion.section
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.3 }}
+            key={tab}
+            initial="hidden"
+            animate="visible"
+            exit="exit"
+            variants={containerVariants}
         >
             <div className="block md:hidden">
                 <Swiper
@@ -56,8 +67,6 @@ const Qualification = () => {
                         <SwiperSlide key={index}>
                             <motion.div
                                 variants={cardVariants}
-                                initial="hidden"
-                                animate="visible"
                                 className="bg-white shadow-md rounded-lg overflow-hidden mb-6"
                             >
                                 <div className="p-6 pb-8">
@@ -89,14 +98,11 @@ const Qualification = () => {
             </div>
 
             <div className="hidden md:block">
-                <AnimatePresence mode="wait">
+                <motion.div variants={containerVariants}>
                     {qualificationData[tab].map((item, index) => (
                         <motion.div
                             key={index}
                             variants={cardVariants}
-                            initial="hidden"
-                            animate="visible"
-                            exit="exit"
                             className="max-w-7xl mx-auto mt-10 bg-white shadow-md rounded-lg overflow-hidden mb-6"
                         >
                             <div className="flex flex-col md:flex-row">
@@ -125,13 +131,13 @@ const Qualification = () => {
                             </div>
                         </motion.div>
                     ))}
-                </AnimatePresence>
+                </motion.div>
             </div>
         </motion.section>
     );
 
     return (
-        <div id="qualification" className="max-w-9xl max-md:max-w-md mx-auto md:mt-52 mt-24 px-6">
+        <div id="qualification" className="max-w-9xl max-md:max-w-md mx-auto md:mt-24 mt-12 px-6">
             <motion.div
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -190,7 +196,7 @@ const Qualification = () => {
                     </ul>
 
                     <div className="p-5">
-                        <AnimatePresence mode="wait">
+                        <AnimatePresence mode="sync">
                             {renderCards(activeTab)}
                         </AnimatePresence>
                     </div>

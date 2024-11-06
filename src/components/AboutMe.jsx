@@ -80,7 +80,7 @@ const AboutMe = () => {
     };
 
     return (
-        <div id='about' className="max-w-9xl max-md:max-w-md mx-auto py-24 px-6">
+        <div id='about' className="max-w-9xl max-md:max-w-md mx-auto py-36 px-6">
             <motion.div
                 className="grid md:grid-cols-2 items-center md:gap-24 gap-6"
                 initial="hidden"
