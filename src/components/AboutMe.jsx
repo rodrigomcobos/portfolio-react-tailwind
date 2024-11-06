@@ -80,7 +80,7 @@ const AboutMe = () => {
     };
 
     return (
-        <div id='about' className="max-w-9xl max-md:max-w-md mx-auto md:mt-64 mt-24 px-6">
+        <div id='about' className="max-w-9xl max-md:max-w-md mx-auto py-24 px-6">
             <motion.div
                 className="grid md:grid-cols-2 items-center md:gap-24 gap-6"
                 initial="hidden"
@@ -154,7 +154,7 @@ const AboutMe = () => {
                 </motion.section>
 
                 <motion.section
-                    className="lg:h-[550px] md:h-[450px] hidden md:flex items-center relative max-md:before:hidden before:absolute before:bg-blue-200 before:h-full before:w-3/4 before:right-0 before:z-0"
+                    className="lg:h-[550px] md:h-[450px] hidden md:flex items-center relative max-md:before:hidden before:absolute before:bg-blue-200 before:h-full before:w-3/4 before:right-0 before:z-0 before:rounded-xl rounded-2xl"
                     variants={imageVariants}
                     initial="hidden"
                     whileInView="visible"

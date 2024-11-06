@@ -29,7 +29,6 @@ const skills = [
 ];
 
 const Skills = () => {
-    // Header animations
     const headerVariants = {
         hidden: { opacity: 0, y: -20 },
         visible: {
@@ -42,7 +41,6 @@ const Skills = () => {
         }
     };
 
-    // Container animations for staggered children
     const containerVariants = {
         hidden: { opacity: 0 },
         visible: {
@@ -54,7 +52,6 @@ const Skills = () => {
         }
     };
 
-    // Individual skill item animations
     const skillVariants = {
         hidden: {
             opacity: 0,
@@ -72,7 +69,6 @@ const Skills = () => {
         }
     };
 
-    // Hover animation for skill items
     const skillHoverVariants = {
         hover: {
             scale: 1.1,
@@ -99,78 +95,85 @@ const Skills = () => {
     };
 
     return (
-        <motion.div
-            id='skills'
-            className="max-w-9xl max-md:max-w-md mx-auto md:mt-52 mt-24 px-6"
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.2 }}
-        >
-            <motion.div variants={headerVariants}>
-                <motion.p
-                    className="text-sm font-bold text-blue-800 mb-2 text-center"
-                    variants={itemVariants}
-                >
-                    <span className="rotate-90 inline-block mr-2">|</span> SKILLS
-                </motion.p>
-
-                <motion.h2
-                    className="text-gray-800 sm:text-4xl text-3xl font-extrabold text-center mb-16"
-                >
-                    Tools of the Trade
-                </motion.h2>
-            </motion.div>
-
-            <motion.div
-                className="grid lg:grid-cols-6 md:grid-cols-4 sm:grid-cols-3 grid-cols-2 gap-8 lg:gap-10"
-                variants={containerVariants}
-            >
-                {skills.map((skill, index) => (
-                    <motion.div
-                        key={index}
-                        className="text-center"
-                        variants={skillVariants}
-                        whileHover="hover"
-                        whileTap="tap"
-                        custom={index}
-                    >
+        <div className="px-4 sm:px-6 lg:px-6 py-24">
+            <div className="max-w-9xl mx-auto">
+                <div className="bg-gray-200 rounded-3xl overflow-hidden">
+                    <div className="py-12 sm:py-24 px-6 sm:px-12">
                         <motion.div
-                            variants={skillHoverVariants}
-                            className="relative"
+                            id='skills'
+                            initial="hidden"
+                            whileInView="visible"
+                            viewport={{ once: true, amount: 0.2 }}
                         >
-                            <motion.img
-                                src={skill.icon}
-                                alt={skill.name}
-                                className="sm:w-20 w-14 mb-6 inline-block"
-                                whileHover={{ rotate: [0, -10, 10, -10, 0] }}
-                                transition={{ duration: 0.5 }}
-                            />
+                            <motion.div variants={headerVariants}>
+                                <motion.p
+                                    className="text-sm font-bold text-blue-800 mb-2 text-center"
+                                    variants={itemVariants}
+                                >
+                                    <span className="rotate-90 inline-block mr-2">|</span> SKILLS
+                                </motion.p>
+
+                                <motion.h2
+                                    className="text-gray-800 sm:text-4xl text-3xl font-extrabold text-center mb-16"
+                                >
+                                    Tools of the Trade
+                                </motion.h2>
+                            </motion.div>
+
                             <motion.div
-                                className="absolute inset-0"
-                                initial={{ opacity: 0 }}
-                                whileHover={{
-                                    opacity: [0, 0.1, 0],
-                                    scale: [1, 1.2, 1],
-                                    transition: {
-                                        duration: 1,
-                                        repeat: Infinity
-                                    }
-                                }}
-                                style={{
-                                    background: 'radial-gradient(circle, rgba(37,99,235,0.2) 0%, rgba(37,99,235,0) 70%)'
-                                }}
-                            />
+                                className="grid lg:grid-cols-6 md:grid-cols-4 sm:grid-cols-3 grid-cols-2 gap-8 lg:gap-10"
+                                variants={containerVariants}
+                            >
+                                {skills.map((skill, index) => (
+                                    <motion.div
+                                        key={index}
+                                        className="text-center"
+                                        variants={skillVariants}
+                                        whileHover="hover"
+                                        whileTap="tap"
+                                        custom={index}
+                                    >
+                                        <motion.div
+                                            variants={skillHoverVariants}
+                                            className="relative"
+                                        >
+                                            <motion.img
+                                                src={skill.icon}
+                                                alt={skill.name}
+                                                className="sm:w-20 w-14 mb-6 inline-block"
+                                                whileHover={{ rotate: [0, -10, 10, -10, 0] }}
+                                                transition={{ duration: 0.5 }}
+                                            />
+                                            <motion.div
+                                                className="absolute inset-0"
+                                                initial={{ opacity: 0 }}
+                                                whileHover={{
+                                                    opacity: [0, 0.1, 0],
+                                                    scale: [1, 1.2, 1],
+                                                    transition: {
+                                                        duration: 1,
+                                                        repeat: Infinity
+                                                    }
+                                                }}
+                                                style={{
+                                                    background: 'radial-gradient(circle, rgba(37,99,235,0.2) 0%, rgba(37,99,235,0) 70%)'
+                                                }}
+                                            />
+                                        </motion.div>
+                                        <motion.h3
+                                            className="text-gray-800 text-xl font-semibold mb-3"
+                                            variants={skillVariants}
+                                        >
+                                            {skill.name}
+                                        </motion.h3>
+                                    </motion.div>
+                                ))}
+                            </motion.div>
                         </motion.div>
-                        <motion.h3
-                            className="text-gray-800 text-xl font-semibold mb-3"
-                            variants={skillVariants}
-                        >
-                            {skill.name}
-                        </motion.h3>
-                    </motion.div>
-                ))}
-            </motion.div>
-        </motion.div>
+                    </div>
+                </div>
+            </div>
+        </div>
     );
 };
 

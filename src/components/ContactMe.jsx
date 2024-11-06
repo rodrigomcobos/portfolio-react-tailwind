@@ -155,9 +155,9 @@ const ContactMe = () => {
                         <h2 className="text-gray-800 text-base font-bold mb-6">Socials</h2>
                         <div className="my-4 mx-4 flex items-center space-x-6 lg:my-0 lg:ml-auto lg:space-x-8 lg:space-y-0">
                             {[
-                                { href: "https://www.linkedin.com/in/rodrigomcobos/", Icon: FaLinkedinIn, hoverColor: "text-blue-700" },
-                                { href: "https://www.behance.net/rodrigocobos1", Icon: FaBehance, hoverColor: "text-blue-400" },
-                                { href: "https://github.com/rodrigomcobos/", Icon: FaGithub, hoverColor: "text-purple-500" }
+                                { href: "https://www.linkedin.com/in/rodrigomcobos/", Icon: FaLinkedinIn, hoverColor: "text-blue-700", name: "LinkedIn" },
+                                { href: "https://www.behance.net/rodrigocobos1", Icon: FaBehance, hoverColor: "text-blue-400", name: "Behance" },
+                                { href: "https://github.com/rodrigomcobos/", Icon: FaGithub, hoverColor: "text-purple-500", name: "GitHub" }
                             ].map((social, index) => (
                                 <motion.a
                                     key={index}
@@ -167,6 +167,7 @@ const ContactMe = () => {
                                     variants={socialIconVariants}
                                     whileHover="hover"
                                     className={`transition duration-300 hover:${social.hoverColor}`}
+                                    aria-label={social.name}
                                 >
                                     <social.Icon size={24} />
                                 </motion.a>

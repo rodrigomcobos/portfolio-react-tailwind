@@ -69,14 +69,14 @@ const Hero = () => {
     };
 
     return (
-        <div className="px-4 sm:px-6 lg:px-6">
+        <div className="px-4 sm:px-6 lg:px-6 pb-24">
             <div className="max-w-9xl mx-auto">
                 <div className="bg-gray-200 rounded-3xl overflow-hidden">
                     <div className="py-12 sm:py-24 px-6 sm:px-12">
                         <div className="grid md:grid-cols-2 gap-8 items-center">
                             {/* Image Section */}
                             <motion.section
-                                className="lg:h-[550px] md:h-[550px] flex items-center justify-center relative sm:justify-center"
+                                className="lg:h-[400px] md:h-[400px] flex items-center justify-center relative sm:justify-center"
                                 variants={imageVariants}
                                 initial="hidden"
                                 animate="visible"
