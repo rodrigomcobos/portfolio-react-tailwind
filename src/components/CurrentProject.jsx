@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 import Image from 'react-image-webp';
 import { FaReact, FaHtml5, FaCss3Alt, FaJsSquare, FaNode, FaDatabase } from 'react-icons/fa';
 import { SiSequelize, SiPostgresql, SiTailwindcss, SiRedux, SiExpress } from 'react-icons/si';
@@ -10,54 +11,129 @@ import CurrentImg2Webp from '../assets/currentproject2.webp';
 import CurrentImg3Png from '../assets/currentproject3.png';
 import CurrentImg3Webp from '../assets/currentproject3.webp';
 
-// Don't forget to import the CSS for react-slick
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
 const TechStack = ({ frontend, backend }) => (
-    <div className="mt-8">
+    <motion.div
+        className="mt-8"
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5, delay: 0.2 }}
+    >
         <p className="text-gray-800 font-bold text-lg mb-6">Main Tools Being Used</p>
         <div className="flex flex-col items-center sm:items-baseline pl-2 gap-10">
-            <div>
+            <motion.div
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.3 }}
+            >
                 <p className='mb-4 font-semibold'>Frontend:</p>
                 <div className='flex flex-row gap-2'>
                     {frontend.map((Icon, index) => (
-                        <Icon key={index} size={30} className="inline-block mr-2 text-blue-800" />
+                        <motion.div
+                            key={index}
+                            initial={{ opacity: 0, scale: 0 }}
+                            whileInView={{ opacity: 1, scale: 1 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.3, delay: 0.1 * index }}
+                            whileHover={{ scale: 1.2 }}
+                        >
+                            <Icon size={30} className="inline-block mr-2 text-blue-800" />
+                        </motion.div>
                     ))}
                 </div>
-            </div>
-            <div>
+            </motion.div>
+            <motion.div
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.4 }}
+            >
                 <p className='mb-4 font-semibold'>Backend & Database:</p>
                 <div className='flex flex-row gap-2'>
                     {backend.map((Icon, index) => (
-                        <Icon key={index} size={30} className="inline-block mr-2 text-blue-800" />
+                        <motion.div
+                            key={index}
+                            initial={{ opacity: 0, scale: 0 }}
+                            whileInView={{ opacity: 1, scale: 1 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.3, delay: 0.1 * index }}
+                            whileHover={{ scale: 1.2 }}
+                        >
+                            <Icon size={30} className="inline-block mr-2 text-blue-800" />
+                        </motion.div>
                     ))}
                 </div>
-            </div>
+            </motion.div>
         </div>
-    </div>
+    </motion.div>
 );
 
 const ProjectSection = ({ image, imageWebp, title, description, frontend, backend, githubLink }) => (
-    <div className="px-4 py-6">
-        <Image
-            src={image}
-            webp={imageWebp}
-            className="w-full h-64 object-cover rounded-lg shadow-md mb-6"
-            alt={title}
-            loading="lazy"
-        />
-        <h2 className="text-2xl font-extrabold text-gray-800 mb-4">{title}</h2>
-        <p className="text-base text-gray-800 leading-relaxed mb-6">{description}</p>
+    <motion.div
+        className="px-4 py-6"
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6 }}
+    >
+        <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            whileHover={{ scale: 1.02 }}
+        >
+            <Image
+                src={image}
+                webp={imageWebp}
+                className="w-full h-64 object-cover rounded-lg shadow-md mb-6"
+                alt={title}
+                loading="lazy"
+            />
+        </motion.div>
+        <motion.h2
+            className="text-2xl font-extrabold text-gray-800 mb-4"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+        >
+            {title}
+        </motion.h2>
+        <motion.p
+            className="text-base text-gray-800 leading-relaxed mb-6"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.3 }}
+        >
+            {description}
+        </motion.p>
         <TechStack frontend={frontend} backend={backend} />
-        <div className='flex justify-center mt-8'>
-            <a href={githubLink} target='_blank' rel="noopener noreferrer">
+        <motion.div
+            className='flex justify-center mt-8'
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.4 }}
+        >
+            <motion.a
+                href={githubLink}
+                target='_blank'
+                rel="noopener noreferrer"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+            >
                 <button className="bg-blue-800 hover:bg-transparent hover:text-blue-800 border-2 border-blue-800 transition-all text-white font-semibold text-sm tracking-wide rounded-md px-6 py-2.5">
                     View Project on GitHub
                 </button>
-            </a>
-        </div>
-    </div>
+            </motion.a>
+        </motion.div>
+    </motion.div>
 );
 
 const CurrentProject = () => {
@@ -104,14 +180,27 @@ const CurrentProject = () => {
 
     return (
         <div>
-            <section id="qualification" className="max-w-7xl max-md:max-w-md mx-auto md:mt-52 mt-24 px-6">
+            <motion.section
+                id="qualification"
+                className="max-w-7xl max-md:max-w-md mx-auto md:mt-52 mt-24 px-6"
+                initial={{ opacity: 0, y: -20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5 }}
+            >
                 <p className="text-sm flex justify-center items-center font-bold text-blue-800 mb-2">
                     <span className="rotate-90 inline-block mr-2">|</span> IN PROGRESS
                 </p>
-                <h2 className="text-gray-800 sm:text-4xl text-2xl font-extrabold text-center mb-16">
+                <motion.h2
+                    className="text-gray-800 sm:text-4xl text-2xl font-extrabold text-center mb-16"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: 0.2 }}
+                >
                     My Current Projects
-                </h2>
-            </section>
+                </motion.h2>
+            </motion.section>
 
             <div className="md:hidden">
                 <Slider {...settings}>
@@ -123,8 +212,22 @@ const CurrentProject = () => {
 
             <div className="hidden md:block">
                 {projects.map((project, index) => (
-                    <section key={index} className="grid md:grid-cols-2 items-center md:gap-8 gap-6 font-[sans-serif] max-w-7xl max-md:max-w-md mx-auto px-8 mb-48">
-                        <section className="md:h-[450px] mx-4">
+                    <motion.section
+                        key={index}
+                        className="grid md:grid-cols-2 items-center md:gap-8 gap-6 font-[sans-serif] max-w-7xl max-md:max-w-md mx-auto px-8 mb-48"
+                        initial={{ opacity: 0, y: 50 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.6 }}
+                    >
+                        <motion.section
+                            className="md:h-[450px] mx-4"
+                            initial={{ opacity: 0, x: -50 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.5 }}
+                            whileHover={{ scale: 1.02 }}
+                        >
                             <Image
                                 src={project.image}
                                 webp={project.imageWebp}
@@ -132,20 +235,53 @@ const CurrentProject = () => {
                                 alt={project.title}
                                 loading="lazy"
                             />
-                        </section>
-                        <section>
-                            <h2 className="md:text-2xl text-2xl md:leading-10 font-extrabold text-gray-800 mb-4">{project.title}</h2>
-                            <p className="mt-4 text-base text-gray-800 leading-relaxed">{project.description}</p>
+                        </motion.section>
+                        <motion.section
+                            initial={{ opacity: 0, x: 50 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.5, delay: 0.2 }}
+                        >
+                            <motion.h2
+                                className="md:text-2xl text-2xl md:leading-10 font-extrabold text-gray-800 mb-4"
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ duration: 0.5 }}
+                            >
+                                {project.title}
+                            </motion.h2>
+                            <motion.p
+                                className="mt-4 text-base text-gray-800 leading-relaxed"
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ duration: 0.5, delay: 0.1 }}
+                            >
+                                {project.description}
+                            </motion.p>
                             <TechStack frontend={project.frontend} backend={project.backend} />
-                            <div className='flex justify-start mt-8'>
-                                <a href={project.githubLink} target='_blank' rel="noopener noreferrer">
+                            <motion.div
+                                className='flex justify-start mt-8'
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ duration: 0.5, delay: 0.3 }}
+                            >
+                                <motion.a
+                                    href={project.githubLink}
+                                    target='_blank'
+                                    rel="noopener noreferrer"
+                                    whileHover={{ scale: 1.05 }}
+                                    whileTap={{ scale: 0.95 }}
+                                >
                                     <button className="bg-blue-800 hover:bg-transparent hover:text-blue-800 border-2 border-blue-800 transition-all text-white font-semibold text-sm tracking-wide rounded-md px-6 py-2.5">
                                         View Project on GitHub
                                     </button>
-                                </a>
-                            </div>
-                        </section>
-                    </section>
+                                </motion.a>
+                            </motion.div>
+                        </motion.section>
+                    </motion.section>
                 ))}
             </div>
         </div>
