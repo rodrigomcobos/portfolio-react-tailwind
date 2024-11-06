@@ -1,9 +1,29 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { FaLinkedinIn, FaBehance, FaGithub } from 'react-icons/fa';
-
 
 const Header = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const [prevScrollPos, setPrevScrollPos] = useState(0);
+    const [visible, setVisible] = useState(true);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            const currentScrollPos = window.scrollY;
+
+            // Determine if we're scrolling up or down
+            const isScrollingDown = currentScrollPos > prevScrollPos;
+
+            // Update visibility based on scroll direction and position
+            setVisible(!isScrollingDown || currentScrollPos < 10);
+
+            // Update the previous scroll position
+            setPrevScrollPos(currentScrollPos);
+        };
+
+        window.addEventListener('scroll', handleScroll);
+
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, [prevScrollPos]);
 
     const handleMenuToggle = () => {
         setIsMenuOpen(!isMenuOpen);
@@ -14,7 +34,7 @@ const Header = () => {
     };
 
     return (
-        <div className='sticky top-0 z-50 bg-white'>
+        <div className={`sticky top-0 z-50 bg-white transition-transform duration-300 ${visible ? 'translate-y-0' : '-translate-y-full'}`}>
             <section className="flex gap-4 items-center justify-center text-center bg-blue-800 text-white px-6 py-2 font-[sans-serif]">
                 <p className="text-base">Looking for a new team to join!</p>
 
@@ -26,7 +46,7 @@ const Header = () => {
                     </a>
                 </div>
             </section>
-            <header className="text-slate-700  mx-full flex flex-col overflow-hidden px-4 py-4 lg:flex-row lg:items-center z-50 mt-4 sticky top-0">
+            <header className="text-slate-700 mx-full flex flex-col overflow-hidden px-4 py-4 lg:flex-row lg:items-center z-50 sticky top-0">
                 <a href="#" className="flex items-center whitespace-nowrap text-2xl font-black ml-4">
                     &lt;/Rodrigo&gt; <span className="text-blue-800">Portfolio</span>
                 </a>
@@ -60,8 +80,6 @@ const Header = () => {
                 </nav>
             </header>
         </div>
-
-
     );
 };
 
