@@ -101,7 +101,7 @@ const Skills = () => {
     return (
         <motion.div
             id='skills'
-            className="max-w-7xl max-md:max-w-md mx-auto md:mt-52 mt-24 px-6"
+            className="max-w-9xl max-md:max-w-md mx-auto md:mt-52 mt-24 px-6"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.2 }}

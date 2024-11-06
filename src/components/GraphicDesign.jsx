@@ -266,7 +266,7 @@ const GraphicDesign = () => {
 
     return (
         <motion.div
-            className="w-full mb-24"
+            className="max-w-9xl mb-24"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}

@@ -182,7 +182,7 @@ const CurrentProject = () => {
         <div>
             <motion.section
                 id="qualification"
-                className="max-w-7xl max-md:max-w-md mx-auto md:mt-52 mt-24 px-6"
+                className="max-w-9xl max-md:max-w-md mx-auto md:mt-52 mt-24 px-6"
                 initial={{ opacity: 0, y: -20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -214,7 +214,7 @@ const CurrentProject = () => {
                 {projects.map((project, index) => (
                     <motion.section
                         key={index}
-                        className="grid md:grid-cols-2 items-center md:gap-8 gap-6 font-[sans-serif] max-w-7xl max-md:max-w-md mx-auto px-8 mb-48"
+                        className="grid md:grid-cols-2 items-center md:gap-8 gap-6 font-[sans-serif] max-w-9xl max-md:max-w-md mx-auto px-8 mb-48"
                         initial={{ opacity: 0, y: 50 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}

@@ -131,7 +131,7 @@ const Qualification = () => {
     );
 
     return (
-        <div id="qualification" className="max-w-7xl max-md:max-w-md mx-auto md:mt-52 mt-24 px-6">
+        <div id="qualification" className="max-w-9xl max-md:max-w-md mx-auto md:mt-52 mt-24 px-6">
             <motion.div
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}

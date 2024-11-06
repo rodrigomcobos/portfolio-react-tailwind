@@ -98,7 +98,7 @@ const ContactMe = () => {
                 </h2>
             </motion.div>
 
-            <div className="grid sm:grid-cols-2 items-start gap-16 max-w-7xl max-md:max-w-md mx-auto mt-14 px-6">
+            <div className="grid sm:grid-cols-2 items-start gap-16 max-w-9xl max-md:max-w-md mx-auto mt-14 px-6">
                 <motion.div
                     variants={containerVariants}
                     initial="hidden"
