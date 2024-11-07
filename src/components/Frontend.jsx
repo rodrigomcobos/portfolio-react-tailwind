@@ -99,7 +99,7 @@ const CardComponent = ({ card }) => (
         viewport={{ once: true }}
     >
         <motion.div
-            className="bg-white rounded-lg shadow-md p-6 flex flex-col h-[550px]" // Fixed height
+            className="bg-white rounded-lg shadow-md p-6 flex flex-col h-[650px]" // Fixed height
             whileHover={{ y: -5 }}
             transition={{ duration: 0.3 }}
         >
@@ -109,7 +109,7 @@ const CardComponent = ({ card }) => (
                 whileInView={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.5 }}
                 whileHover={{ scale: 1.02 }}
-                className="w-full h-[224px]" // Fixed height for image container
+                className="w-full h-fit"
             >
                 <Image
                     src={card.image}

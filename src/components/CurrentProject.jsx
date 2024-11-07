@@ -90,7 +90,7 @@ const ProjectSection = ({ image, imageWebp, title, description, frontend, backen
             <Image
                 src={image}
                 webp={imageWebp}
-                className="w-full h-64 object-cover rounded-lg shadow-md mb-6"
+                className="w-full h-full object-contain rounded-lg shadow-md mb-6"
                 alt={title}
                 loading="lazy"
             />
@@ -214,14 +214,14 @@ const CurrentProject = () => {
                 {projects.map((project, index) => (
                     <motion.section
                         key={index}
-                        className="grid md:grid-cols-2 items-center md:gap-8 gap-6 font-[sans-serif] max-w-9xl max-md:max-w-md mx-auto px-8 mb-48"
+                        className="grid md:grid-cols-2 items-start md:gap-8 gap-6 font-[sans-serif] max-w-9xl max-md:max-w-md mx-auto px-8 mb-48"
                         initial={{ opacity: 0, y: 50 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.6 }}
                     >
                         <motion.section
-                            className="md:h-[450px] mx-4"
+                            className="mx-4"
                             initial={{ opacity: 0, x: -50 }}
                             whileInView={{ opacity: 1, x: 0 }}
                             viewport={{ once: true }}
@@ -231,7 +231,7 @@ const CurrentProject = () => {
                             <Image
                                 src={project.image}
                                 webp={project.imageWebp}
-                                className="w-full h-full object-cover rounded-lg shadow-md"
+                                className="w-[80%] h-auto mx-auto object-contain rounded-lg shadow-md"
                                 alt={project.title}
                                 loading="lazy"
                             />
