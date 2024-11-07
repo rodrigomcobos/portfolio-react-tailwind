@@ -4,6 +4,9 @@ module.exports = withMT({
   content: ['./index.html', './src/**/*.{vue,js,ts,jsx,tsx}'],
   theme: {
     extend: {
+      fontFamily: {
+        jersey: ['Jersey 20', 'sans-serif'],
+      },
       keyframes: {
         scroll: {
           '0%': { transform: 'translateX(0)' },

@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { FaLinkedinIn, FaBehance, FaGithub } from 'react-icons/fa';
 import { SlMenu } from "react-icons/sl";
+import { TypeAnimation } from 'react-type-animation';
+
 
 const Header = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -46,8 +48,25 @@ const Header = () => {
                 <header className="text-slate-700 w-full px-4 py-4">
                     <div className="max-w-7xl mx-auto flex flex-col lg:flex-row lg:items-center">
                         <div className="flex justify-between items-center">
-                            <Link to="/" className="flex items-center text-2xl font-black">
-                                &lt;/Rodrigo&gt; <span className="text-blue-800">Portfolio</span>
+                            <Link to="/" className="flex items-center text-2xl font-jersey font-bold">
+                                &lt;Rodrigo/&gt;&nbsp;
+                                <span className="text-blue-800">
+                                    <TypeAnimation
+                                        sequence={[
+                                            ' Portfolio',
+                                            2000,
+                                            ' Frontend Dev',
+                                            2000,
+                                            ' Graphic Designer',
+                                            2000,
+                                            ' UX Designer',
+                                            2000,
+                                        ]}
+                                        wrapper="span"
+                                        speed={50}
+                                        repeat={Infinity}
+                                    />
+                                </span>
                             </Link>
                             <button
                                 className="lg:hidden p-2"
