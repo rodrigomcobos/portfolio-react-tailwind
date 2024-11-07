@@ -6,12 +6,14 @@ import ProfileImgPng from '../assets/profile2.png';
 import BehanceLogoPng from '../assets/behancelogo.png';
 import GithubLogoPng from '../assets/githublogo.png';
 import LinkedInLogoPng from '../assets/linkedlogo.png';
+import CodeBackground from '../assets/codebackground.jpeg';
 
 // Images in WebP format
 import ProfileImgWebp from '../assets/profile2.webp';
 import BehanceLogoWebp from '../assets/behancelogo.webp';
 import GithubLogoWebp from '../assets/githublogo.webp';
 import LinkedInLogoWebp from '../assets/linkedlogo.webp';
+import CodeBackgroundWebp from '../assets/codebackground.webp';
 
 const AboutMe = () => {
     // Animation variants for text content
@@ -154,7 +156,10 @@ const AboutMe = () => {
                 </motion.section>
 
                 <motion.section
-                    className="lg:h-[550px] md:h-[450px] hidden md:flex items-center relative max-md:before:hidden before:absolute before:bg-blue-200 before:h-full before:w-3/4 before:right-0 before:z-0 before:rounded-xl rounded-2xl"
+                    className="lg:h-[550px] md:h-[450px] hidden md:flex items-center relative max-md:before:hidden before:absolute before:h-full before:w-3/4 before:right-0 before:z-0 before:rounded-xl before:bg-[image:var(--code-bg)] before:bg-cover before:bg-center before:opacity-50 before:bg-no-repeat rounded-2xl"
+                    style={{
+                        '--code-bg': `url(${CodeBackground})`
+                    }}
                     variants={imageVariants}
                     initial="hidden"
                     whileInView="visible"

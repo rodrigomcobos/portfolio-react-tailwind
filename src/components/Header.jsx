@@ -4,22 +4,27 @@ import { FaLinkedinIn, FaBehance, FaGithub } from 'react-icons/fa';
 import { SlMenu } from "react-icons/sl";
 import { TypeAnimation } from 'react-type-animation';
 
-
 const Header = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
-    const [prevScrollPos, setPrevScrollPos] = useState(0);
+    const [prevScrollPos, setPrevScrollPos] = useState(window.pageYOffset);
     const [visible, setVisible] = useState(true);
     const location = useLocation();
 
     useEffect(() => {
         const handleScroll = () => {
-            const currentScrollPos = window.scrollY;
-            const isScrollingDown = currentScrollPos > prevScrollPos;
-            setVisible(!isScrollingDown || currentScrollPos < 10);
+            const currentScrollPos = window.pageYOffset;
+
+            // Set visible based on scroll direction
+            setVisible(
+                (prevScrollPos > currentScrollPos) ||  // Scrolling up
+                currentScrollPos < 10                  // At the top
+            );
+
             setPrevScrollPos(currentScrollPos);
         };
 
-        window.addEventListener('scroll', handleScroll);
+        window.addEventListener('scroll', handleScroll, { passive: true });
+
         return () => window.removeEventListener('scroll', handleScroll);
     }, [prevScrollPos]);
 
@@ -33,7 +38,10 @@ const Header = () => {
 
     return (
         <>
-            <div className={`sticky top-0 z-50 w-full bg-white transition-transform duration-300 ${visible ? 'translate-y-0' : '-translate-y-full'}`}>
+            <div
+                className={`fixed top-0 left-0 right-0 z-50 w-full bg-white transition-transform duration-300 ${visible ? 'translate-y-0' : '-translate-y-full'
+                    }`}
+            >
                 <section className="flex flex-wrap gap-4 items-center justify-center text-center bg-blue-800 text-white px-4 py-2">
                     <p className="text-base">Looking for a new team to join!</p>
                     <div className="flex gap-2">
@@ -46,7 +54,7 @@ const Header = () => {
                 </section>
 
                 <header className="text-slate-700 w-full px-4 py-4">
-                    <div className="max-w-7xl mx-auto flex flex-col lg:flex-row lg:items-center">
+                    <div className="max-w-9xl mx-auto flex flex-col lg:flex-row lg:items-center">
                         <div className="flex justify-between items-center">
                             <Link to="/" className="flex items-center text-2xl font-jersey font-bold">
                                 &lt;Rodrigo/&gt;&nbsp;
@@ -112,6 +120,9 @@ const Header = () => {
                     </div>
                 </header>
             </div>
+
+            {/* Add a spacer to prevent content from jumping */}
+            <div className="h-[105px]" /> {/* Adjust this height to match your header height */}
 
             {/* Floating Social Media Icons */}
             <div className="fixed bottom-6 right-6 flex flex-col gap-4 z-50">

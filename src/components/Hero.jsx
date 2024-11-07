@@ -3,6 +3,7 @@ import Image from 'react-image-webp';
 import { motion } from 'framer-motion';
 import ProfileImgPng from '../assets/profile1.png';
 import ProfileImgWebp from '../assets/profile1.webp';
+import StateOutline from '../assets/stateoutline.svg';
 
 const Hero = () => {
     const containerVariants = {
@@ -69,9 +70,17 @@ const Hero = () => {
     };
 
     return (
-        <div className="px-4 sm:px-6 lg:px-6 pb-24">
+        <div className="px-4 sm:px-6 lg:px-6 pb-24 mt-2">
             <div className="max-w-9xl mx-auto">
-                <div className="bg-gray-200 rounded-3xl overflow-hidden">
+                <div className="bg-gray-200 rounded-3xl overflow-hidden relative">
+                    {/* Added State Outline Background */}
+                    <img
+                        src={StateOutline}
+                        alt="State of Texas Outline"
+                        className="absolute right-0 bottom-0 w-2/5 h-auto opacity-[0.08] -translate-x-12 translate-y-8 pointer-events-none"
+                        aria-hidden="true"
+                    />
+
                     <div className="py-12 sm:py-24 px-6 sm:px-12">
                         <div className="grid md:grid-cols-2 gap-8 items-center">
                             {/* Image Section */}
