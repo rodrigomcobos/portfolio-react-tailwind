@@ -163,7 +163,7 @@ const CardComponent = ({ card }) => (
         viewport={{ once: true }}
     >
         <motion.div
-            className="bg-white rounded-lg shadow-md p-6 flex flex-col h-[650px]"
+            className="bg-white rounded-lg shadow-md p-6 flex flex-col h-[550px] sm:h-[650px]"
             whileHover={{ y: -5 }}
             transition={{ duration: 0.3 }}
         >
@@ -293,7 +293,7 @@ const GraphicDesign = () => {
                 transition={{ duration: 0.5 }}
             >
                 <motion.h2
-                    className="text-gray-800 sm:text-4xl text-2xl font-extrabold text-center mb-16"
+                    className="text-gray-800 sm:text-4xl text-2xl font-extrabold text-center mb-8 sm:mb-16"
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}

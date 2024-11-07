@@ -57,17 +57,21 @@ const Header = () => {
                     <div className="max-w-9xl mx-auto flex flex-col lg:flex-row lg:items-center">
                         <div className="flex justify-between items-center">
                             <Link to="/" className="flex items-center text-2xl font-jersey font-bold">
-                                &lt;Rodrigo/&gt;&nbsp;
+                                &lt;/Rodrigo&gt;&nbsp;
                                 <span className="text-blue-800">
                                     <TypeAnimation
                                         sequence={[
                                             ' Portfolio',
                                             2000,
+                                            ' What can I do?',
+                                            2000,
                                             ' Frontend Dev',
                                             2000,
-                                            ' Graphic Designer',
+                                            ' Graphic Design',
                                             2000,
-                                            ' UX Designer',
+                                            ' UX Design',
+                                            2000,
+                                            ' Brand Design',
                                             2000,
                                         ]}
                                         wrapper="span"

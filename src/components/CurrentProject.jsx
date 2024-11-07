@@ -192,7 +192,7 @@ const CurrentProject = () => {
                     <span className="rotate-90 inline-block mr-2">|</span> IN PROGRESS
                 </p>
                 <motion.h2
-                    className="text-gray-800 sm:text-4xl text-2xl font-extrabold text-center mb-16"
+                    className="text-gray-800 sm:text-4xl text-2xl font-extrabold text-center mb-8 sm:mb-16"
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}

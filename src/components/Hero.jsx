@@ -1,6 +1,7 @@
 import React from 'react';
 import Image from 'react-image-webp';
 import { motion } from 'framer-motion';
+import { TypeAnimation } from 'react-type-animation';
 import ProfileImgPng from '../assets/profile1.png';
 import ProfileImgWebp from '../assets/profile1.webp';
 import StateOutline from '../assets/stateoutline.svg';
@@ -70,20 +71,18 @@ const Hero = () => {
     };
 
     return (
-        <div className="px-4 sm:px-6 lg:px-6 pb-24 mt-2">
+        <div className="px-4 sm:px-6 lg:px-6 pb-10 sm:pb-24 mt-2">
             <div className="max-w-9xl mx-auto">
                 <div className="bg-gray-200 rounded-3xl overflow-hidden relative">
-                    {/* Added State Outline Background */}
                     <img
                         src={StateOutline}
                         alt="State of Texas Outline"
-                        className="absolute right-0 bottom-0 w-2/5 h-auto opacity-[0.08] -translate-x-12 translate-y-8 pointer-events-none"
+                        className="absolute right-0 bottom-0 w-1/2 h-auto opacity-[0.08] -translate-x-12 translate-y-8 pointer-events-none hidden sm:block"
                         aria-hidden="true"
                     />
 
                     <div className="py-12 sm:py-24 px-6 sm:px-12">
                         <div className="grid md:grid-cols-2 gap-8 items-center">
-                            {/* Image Section */}
                             <motion.section
                                 className="lg:h-[400px] md:h-[400px] flex items-center justify-center relative sm:justify-center"
                                 variants={imageVariants}
@@ -93,13 +92,13 @@ const Hero = () => {
                                 <Image
                                     src={ProfileImgPng}
                                     webp={ProfileImgWebp}
-                                    className="rounded-xl lg:w-4/5 w-4/5 z-20 relative"
+                                    className="rounded-xl lg:w-[75%] w-[75%] z-20 relative" // Changed from w-4/5 to w-3/5
                                     alt="Profile Image"
                                     loading="lazy"
                                 />
                             </motion.section>
 
-                            {/* Content Section */}
+                            {/* Rest of the component remains the same */}
                             <motion.section
                                 className="max-md:order-1 max-md:text-center z-10 relative"
                                 variants={containerVariants}
@@ -116,13 +115,29 @@ const Hero = () => {
                                     className="text-blue-800 lg:text-5xl md:text-4xl text-3xl font-extrabold md-2"
                                     variants={itemVariants}
                                 >
-                                    Full Stack Developer
+                                    <TypeAnimation
+                                        sequence={[
+                                            'a Full Stack Developer',
+                                            2000,
+                                            'a Frontend Developer',
+                                            2000,
+                                            'a UX Designer',
+                                            2000,
+                                            'a Graphic Designer',
+                                            2000,
+                                            'a Brand Designer',
+                                            2000,
+                                        ]}
+                                        wrapper="span"
+                                        speed={50}
+                                        repeat={Infinity}
+                                    />
                                 </motion.h2>
                                 <motion.h2
                                     className="text-gray-800 lg:text-2xl md:text-3xl text-2xl font-extrabold mb-4 md:!leading-[56px]"
                                     variants={itemVariants}
                                 >
-                                    Located in Dallas, TX
+                                    Located in Dallas, TX and Remote
                                 </motion.h2>
                                 <motion.p
                                     className="text-gray-700 mt-6 leading-relaxed"

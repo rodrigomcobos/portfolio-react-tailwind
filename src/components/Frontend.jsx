@@ -99,7 +99,7 @@ const CardComponent = ({ card }) => (
         viewport={{ once: true }}
     >
         <motion.div
-            className="bg-white rounded-lg shadow-md p-6 flex flex-col h-[650px]" // Fixed height
+            className="bg-white rounded-lg shadow-md p-6 flex flex-col h-[550px] sm:h-[650px]"
             whileHover={{ y: -5 }}
             transition={{ duration: 0.3 }}
         >
@@ -228,7 +228,7 @@ const Frontend = () => {
                     <span className="rotate-90 inline-block mr-2">|</span> PORTFOLIO
                 </p>
                 <motion.h2
-                    className="text-gray-800 sm:text-4xl text-2xl font-extrabold text-center mb-16"
+                    className="text-gray-800 sm:text-4xl text-2xl font-extrabold text-center mb-8 sm:mb-16"
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
@@ -244,7 +244,7 @@ const Frontend = () => {
                 ))}
             </Slider>
             <motion.div
-                className='flex justify-center mt-16'
+                className='flex justify-center mt-8 sm:mt-16'
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
