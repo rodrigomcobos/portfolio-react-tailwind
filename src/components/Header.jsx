@@ -113,7 +113,7 @@ const Header = () => {
                                 <li className="lg:ml-12">
                                     <Link
                                         to="/projects"
-                                        className={`rounded-xl p-2 transition duration-200 ${location.pathname === '/projects' ? 'bg-blue-800 text-white' : 'text-gray-700'}`}
+                                        className={`rounded-lg px-4 py-2 transition duration-200 ${location.pathname === '/projects' ? 'bg-blue-800 text-white' : 'text-gray-700'}`}
                                         onClick={handleMenuClose}
                                     >
                                         Projects

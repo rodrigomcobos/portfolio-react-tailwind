@@ -18,7 +18,7 @@ const Home = () => {
             <AboutMe />
             <Skills />
             <Qualification />
-            <CurrentProject />
+            {/* <CurrentProject /> */}
             <Frontend />
             <GraphicDesign />
             <UxUiDesign />

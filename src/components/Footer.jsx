@@ -2,7 +2,7 @@ import React from 'react'
 
 const Footer = () => {
     return (
-        <footer className="bg-gray-900 text-gray-300 mx-auto md:mt-48 mt-14 py-6 mb-auto">
+        <footer className="bg-gray-900 text-gray-300 mx-auto py-6 mb-auto">
             <div className="flex justify-between items-center max-lg:flex-col text-center flex-wrap gap-4 px-8 max-w-9xl mx-auto">
                 <p className="text-[15px]">© Rodrigo Cobos. All rights reserved.</p>
                 <p className="text-[11px]">This website was created using React, Tailwind, EmailJS and deployed using Netlify.</p>
