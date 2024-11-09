@@ -1,5 +1,6 @@
 import { motion, useScroll, useTransform } from 'framer-motion';
 import Image from 'react-image-webp';
+import { useState, useEffect } from 'react';
 
 // Images in PNG format
 import ProfileImgPng from '../assets/profile2.png';
@@ -16,7 +17,26 @@ import LinkedInLogoWebp from '../assets/linkedlogo.webp';
 import CodeBackgroundWebp from '../assets/codebackground.webp';
 
 const AboutMe = () => {
-    // Animation variants for text content
+    const [supportsWebP, setSupportsWebP] = useState(false);
+
+    useEffect(() => {
+        // Check WebP support
+        const checkWebP = () => {
+            const elem = document.createElement('canvas');
+
+            if (!!(elem.getContext && elem.getContext('2d'))) {
+                // was able to get context
+                return elem.toDataURL('image/webp').indexOf('data:image/webp') === 0;
+            }
+
+            // no canvas support
+            return false;
+        };
+
+        setSupportsWebP(checkWebP());
+    }, []);
+
+    // Rest of your component code remains exactly the same...
     const containerVariants = {
         hidden: { opacity: 0 },
         visible: {
@@ -40,7 +60,6 @@ const AboutMe = () => {
         }
     };
 
-    // Social media icons animation variants
     const socialIconsVariants = {
         hidden: { opacity: 0 },
         visible: {
@@ -65,7 +84,6 @@ const AboutMe = () => {
         }
     };
 
-    // Image animation variants
     const imageVariants = {
         hidden: {
             opacity: 0,
@@ -81,8 +99,8 @@ const AboutMe = () => {
         }
     };
 
-    // Background image based on WebP support
-    const backgroundImage = isWebpSupported() ? CodeBackgroundWebp : CodeBackground;
+    // Select background image based on WebP support
+    const backgroundImage = supportsWebP ? CodeBackgroundWebp : CodeBackground;
 
     return (
         <div id='about' className="max-w-9xl max-md:max-w-md mx-auto py-24 sm:py-36 px-6">
@@ -142,7 +160,7 @@ const AboutMe = () => {
                         </motion.p>
 
                         <motion.div
-                            className="grid grid-cols-2 md:grid-cols-4 gap-4 items-center sm:justify-center"
+                            className="grid grid-cols-2 md:grid-cols-3 gap-4 items-center sm:justify-center"
                             variants={socialIconsVariants}
                         >
                             <motion.div variants={iconVariants} whileHover={{ scale: 1.1 }}>
