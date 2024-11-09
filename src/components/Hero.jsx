@@ -77,7 +77,7 @@ const Hero = () => {
                     <img
                         src={StateOutline}
                         alt="State of Texas Outline"
-                        className="absolute right-0 bottom-0 w-1/2 h-auto opacity-[0.08] -translate-x-12 translate-y-8 pointer-events-none hidden sm:block"
+                        className="absolute left-1/2 top-1/2 translate-x-[5%] -translate-y-1/2 w-[50%] sm:w-[50%] md:w-[50%] h-auto opacity-[0.08] pointer-events-none hidden sm:block"
                         aria-hidden="true"
                     />
 
