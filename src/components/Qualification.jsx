@@ -153,45 +153,61 @@ const Qualification = () => {
 
             <div className="w-full">
                 <div className="relative right-0">
-                    <ul className="relative flex flex-wrap px-1.5 py-1.5 list-none rounded-md bg-slate-100" role="list">
-                        <li role='presentation' className="flex-auto text-center">
-                            <motion.a
-                                className={`flex items-center justify-center w-full px-0 py-2 text-lg font-semibold transition-all ease-in-out border-0 rounded-md cursor-pointer 
-                                ${activeTab === 'education' ? 'text-white font-bold bg-blue-800' : 'text-slate-800'}`}
+                    <ul
+                        className="relative flex flex-wrap px-1.5 py-1.5 list-none rounded-md bg-slate-100"
+                        role="tablist"
+                        aria-label="Qualification sections"
+                    >
+                        <li role="presentation" className="flex-auto text-center">
+                            <motion.button
+                                className={`flex items-center justify-center w-full px-0 py-2 text-lg font-semibold transition-all ease-in-out border-0 rounded-md cursor-pointer
+                ${activeTab === 'education' ? 'text-white font-bold bg-blue-800' : 'text-slate-800'}`}
                                 onClick={() => setActiveTab('education')}
-                                role="tab education"
+                                role="tab"
+                                id="education-tab"
+                                aria-controls="education-panel"
+                                aria-selected={activeTab === 'education'}
+                                tabIndex={activeTab === 'education' ? 0 : -1}
                                 whileHover={{ scale: 1.02 }}
                                 whileTap={{ scale: 0.98 }}
                             >
-                                <FaGraduationCap className="inline-block mr-2" />
+                                <FaGraduationCap className="inline-block mr-2" aria-hidden="true" />
                                 Education
-                            </motion.a>
+                            </motion.button>
                         </li>
-                        <li className="flex-auto text-center">
-                            <motion.a
-                                className={`flex items-center justify-center w-full px-0 py-2 text-lg font-semibold transition-all ease-in-out border-0 rounded-md cursor-pointer 
-                                ${activeTab === 'work' ? 'text-white font-bold bg-blue-800' : 'text-slate-800'}`}
+                        <li role="presentation" className="flex-auto text-center">
+                            <motion.button
+                                className={`flex items-center justify-center w-full px-0 py-2 text-lg font-semibold transition-all ease-in-out border-0 rounded-md cursor-pointer
+                ${activeTab === 'work' ? 'text-white font-bold bg-blue-800' : 'text-slate-800'}`}
                                 onClick={() => setActiveTab('work')}
-                                role="tab work"
+                                role="tab"
+                                id="work-tab"
+                                aria-controls="work-panel"
+                                aria-selected={activeTab === 'work'}
+                                tabIndex={activeTab === 'work' ? 0 : -1}
                                 whileHover={{ scale: 1.02 }}
                                 whileTap={{ scale: 0.98 }}
                             >
-                                <FaBriefcase className="inline-block mr-2" />
+                                <FaBriefcase className="inline-block mr-2" aria-hidden="true" />
                                 Work History
-                            </motion.a>
+                            </motion.button>
                         </li>
-                        <li className="flex-auto text-center">
-                            <motion.a
-                                className={`flex items-center justify-center w-full px-0 py-2 text-lg font-semibold transition-all ease-in-out border-0 rounded-md cursor-pointer 
-                                ${activeTab === 'voluntary' ? 'text-white font-bold bg-blue-800' : 'text-slate-800'}`}
+                        <li role="presentation" className="flex-auto text-center">
+                            <motion.button
+                                className={`flex items-center justify-center w-full px-0 py-2 text-lg font-semibold transition-all ease-in-out border-0 rounded-md cursor-pointer
+                ${activeTab === 'voluntary' ? 'text-white font-bold bg-blue-800' : 'text-slate-800'}`}
                                 onClick={() => setActiveTab('voluntary')}
-                                role="tab voluntary"
+                                role="tab"
+                                id="voluntary-tab"
+                                aria-controls="voluntary-panel"
+                                aria-selected={activeTab === 'voluntary'}
+                                tabIndex={activeTab === 'voluntary' ? 0 : -1}
                                 whileHover={{ scale: 1.02 }}
                                 whileTap={{ scale: 0.98 }}
                             >
-                                <MdVolunteerActivism className="inline-block mr-2" />
+                                <MdVolunteerActivism className="inline-block mr-2" aria-hidden="true" />
                                 Volunteer Work
-                            </motion.a>
+                            </motion.button>
                         </li>
                     </ul>
 
