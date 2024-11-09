@@ -81,6 +81,9 @@ const AboutMe = () => {
         }
     };
 
+    // Background image based on WebP support
+    const backgroundImage = isWebpSupported() ? CodeBackgroundWebp : CodeBackground;
+
     return (
         <div id='about' className="max-w-9xl max-md:max-w-md mx-auto py-24 sm:py-36 px-6">
             <motion.div
@@ -158,7 +161,7 @@ const AboutMe = () => {
                 <motion.section
                     className="lg:h-[550px] md:h-[450px] hidden md:flex items-center relative max-md:before:hidden before:absolute before:h-full before:w-3/4 before:right-0 before:z-0 before:rounded-xl before:bg-[image:var(--code-bg)] before:bg-cover before:bg-center before:opacity-50 before:bg-no-repeat rounded-2xl"
                     style={{
-                        '--code-bg': `url(${CodeBackground})`
+                        '--code-bg': `url(${backgroundImage})`
                     }}
                     variants={imageVariants}
                     initial="hidden"
