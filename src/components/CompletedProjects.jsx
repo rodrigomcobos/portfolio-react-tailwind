@@ -148,18 +148,28 @@ const ProjectSection = ({ image, imageWebp, title, description, frontend, backen
 );
 
 // Add more projects here
-const CurrentProject = () => {
+const CompletedProjects = () => {
     const projects = [
         {
-            image: CurrentImg2Png,
-            imageWebp: CurrentImg2Webp,
-            title: "CCBL Church Website Revamp",
-            description: "This is a passion project I'm currently working on for my church...",
+            image: CurrentImgPng,
+            imageWebp: CurrentImgWebp,
+            title: "Evento Ticketing Platform",
+            description: "Currently working on this project as an assessment to DevMountain Bootcamp. This will be a fully responsive and fully functional website that will include over 20 components and over 10 pages, utilizing a plethora of tools such as React, JavaScript, Tailwind for the front end and Node, Express, Sequelize ORM and PostgreSQL for the back end, for encryption and authentication I am using Bcrypt, also using EmailJS for form submissions. Also using third party packages like Leaflet, Dotenv, React Icons, Vite with Vite Express, React Router, Redux, Axios, Slick Carousel, React-date picker, and more while utilizing the Ticketmaster API for event data and storing saved data in a database.",
             frontend: [FaReact, FaHtml5, FaCss3Alt, FaJsSquare, SiTailwindcss],
-            backend: [FaNode, SiExpress],
-            githubLink: 'https://github.com/rodrigomcobos/mocop-church-site',
-            demoLink: 'https://ccbl-church-lewisville.netlify.app/',
-        }
+            backend: [FaNode, SiRedux, SiExpress, FaDatabase, SiSequelize, SiPostgresql],
+            githubLink: 'https://github.com/rodrigomcobos/evento--project-1',
+            demoLink: 'https://evento-project-1.netlify.app'
+        },
+        {
+            image: CurrentImg3Png,
+            imageWebp: CurrentImg3Webp,
+            title: "Timeline Slot Scheduling Platform",
+            description: "Timeline Slot is an online appointment scheduling platform developed by a team of three developers to simplify booking for service-based businesses. The platform allows businesses to manage schedules, clients, and services efficiently, while providing clients with a user-friendly interface for booking and managing appointments. Built with React for a responsive interface and Redux for efficient state management, the platform uses Tailwind CSS for modern styling. On the backend, Node.js, Express, and Sequelize manage API requests and database communication with PostgreSQL. Key features include ChartJS for visual analytics, React Scheduler for flexible calendar management, and EmailJS for automated client notifications. Bcrypt ensures secure authentication, while Vite optimizes development speed, making the platform robust and efficient for businesses of all sizes.",
+            frontend: [FaReact, FaHtml5, FaCss3Alt, FaJsSquare, SiTailwindcss],
+            backend: [FaNode, SiRedux, SiExpress, FaDatabase, SiSequelize, SiPostgresql],
+            githubLink: 'https://github.com/Devmountain-group-projects/timeslot-project',
+            demoLink: 'https://timeslot-project.netlify.app'
+        },
     ];
 
     const settings = {
@@ -184,7 +194,7 @@ const CurrentProject = () => {
                 transition={{ duration: 0.5 }}
             >
                 <p className="text-sm flex justify-center items-center font-bold text-blue-800 mb-2">
-                    <span className="rotate-90 inline-block mr-2">|</span> IN PROGRESS
+                    <span className="rotate-90 inline-block mr-2">|</span> COMPLETED PROJECTS
                 </p>
                 <motion.h2
                     className="text-gray-800 sm:text-4xl text-2xl font-extrabold text-center mb-8 sm:mb-16"
@@ -193,100 +203,105 @@ const CurrentProject = () => {
                     viewport={{ once: true }}
                     transition={{ duration: 0.5, delay: 0.2 }}
                 >
-                    My Current Projects
+                    My Past Projects
                 </motion.h2>
             </motion.section>
 
-            {/* Mobile view */}
-            <div className="md:hidden">
-                <ProjectSection {...projects[0]} />
+            <div className="md:hidden mb-14">
+                <Slider {...settings}>
+                    {projects.map((project, index) => (
+                        <ProjectSection key={index} {...project} />
+                    ))}
+                </Slider>
             </div>
 
-            {/* Desktop view */}
             <div className="hidden md:block">
-                <motion.section
-                    className="grid md:grid-cols-2 items-start md:gap-8 gap-6 font-[sans-serif] max-w-9xl max-md:max-w-md mx-auto px-8 mb-48"
-                    initial={{ opacity: 0, y: 50 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.6 }}
-                >
+                {projects.map((project, index) => (
                     <motion.section
-                        className="mx-4"
-                        initial={{ opacity: 0, x: -50 }}
-                        whileInView={{ opacity: 1, x: 0 }}
+                        key={index}
+                        className="grid md:grid-cols-2 items-start md:gap-8 gap-6 font-[sans-serif] max-w-9xl max-md:max-w-md mx-auto px-8 mb-48"
+                        initial={{ opacity: 0, y: 50 }}
+                        whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        transition={{ duration: 0.5 }}
-                        whileHover={{ scale: 1.02 }}
+                        transition={{ duration: 0.6 }}
                     >
-                        <Image
-                            src={projects[0].image}
-                            webp={projects[0].imageWebp}
-                            className="w-[80%] h-auto mx-auto object-contain rounded-lg shadow-md"
-                            alt={projects[0].title}
-                            loading="lazy"
-                        />
-                    </motion.section>
-                    <motion.section
-                        initial={{ opacity: 0, x: 50 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.5, delay: 0.2 }}
-                    >
-                        <motion.h2
-                            className="md:text-2xl text-2xl md:leading-10 font-extrabold text-gray-800 mb-4"
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
+                        <motion.section
+                            className="mx-4"
+                            initial={{ opacity: 0, x: -50 }}
+                            whileInView={{ opacity: 1, x: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.5 }}
+                            whileHover={{ scale: 1.02 }}
                         >
-                            {projects[0].title}
-                        </motion.h2>
-                        <motion.p
-                            className="mt-4 text-base text-gray-800 leading-relaxed"
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
+                            <Image
+                                src={project.image}
+                                webp={project.imageWebp}
+                                className="w-[80%] h-auto mx-auto object-contain rounded-lg shadow-md"
+                                alt={project.title}
+                                loading="lazy"
+                            />
+                        </motion.section>
+                        <motion.section
+                            initial={{ opacity: 0, x: 50 }}
+                            whileInView={{ opacity: 1, x: 0 }}
                             viewport={{ once: true }}
-                            transition={{ duration: 0.5, delay: 0.1 }}
+                            transition={{ duration: 0.5, delay: 0.2 }}
                         >
-                            {projects[0].description}
-                        </motion.p>
-                        <TechStack frontend={projects[0].frontend} backend={projects[0].backend} />
-                        <motion.div
-                            className='flex justify-start mt-8 gap-4'
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.5, delay: 0.3 }}
-                        >
-                            <motion.a
-                                href={projects[0].githubLink}
-                                target='_blank'
-                                rel="noopener noreferrer"
-                                whileHover={{ scale: 1.05 }}
-                                whileTap={{ scale: 0.95 }}
+                            <motion.h2
+                                className="md:text-2xl text-2xl md:leading-10 font-extrabold text-gray-800 mb-4"
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ duration: 0.5 }}
                             >
-                                <button className="bg-blue-800 hover:bg-transparent hover:text-blue-800 border-2 border-blue-800 transition-all text-white font-semibold text-sm tracking-wide rounded-md px-6 py-2.5">
-                                    View Project on GitHub
-                                </button>
-                            </motion.a>
-                            <motion.a
-                                href={projects[0].demoLink}
-                                target='_blank'
-                                rel="noopener noreferrer"
-                                whileHover={{ scale: 1.05 }}
-                                whileTap={{ scale: 0.95 }}
+                                {project.title}
+                            </motion.h2>
+                            <motion.p
+                                className="mt-4 text-base text-gray-800 leading-relaxed"
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ duration: 0.5, delay: 0.1 }}
                             >
-                                <button className="bg-blue-800 hover:bg-transparent hover:text-blue-800 border-2 border-blue-800 transition-all text-white font-semibold text-sm tracking-wide rounded-md px-6 py-2.5">
-                                    View Project Demo
-                                </button>
-                            </motion.a>
-                        </motion.div>
+                                {project.description}
+                            </motion.p>
+                            <TechStack frontend={project.frontend} backend={project.backend} />
+                            <motion.div
+                                className='flex justify-start mt-8 gap-4'
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ duration: 0.5, delay: 0.3 }}
+                            >
+                                <motion.a
+                                    href={project.githubLink}
+                                    target='_blank'
+                                    rel="noopener noreferrer"
+                                    whileHover={{ scale: 1.05 }}
+                                    whileTap={{ scale: 0.95 }}
+                                >
+                                    <button className="bg-blue-800 hover:bg-transparent hover:text-blue-800 border-2 border-blue-800 transition-all text-white font-semibold text-sm tracking-wide rounded-md px-6 py-2.5">
+                                        View Project on GitHub
+                                    </button>
+                                </motion.a>
+                                <motion.a
+                                    href={project.demoLink}
+                                    target='_blank'
+                                    rel="noopener noreferrer"
+                                    whileHover={{ scale: 1.05 }}
+                                    whileTap={{ scale: 0.95 }}
+                                >
+                                    <button className="bg-blue-800 hover:bg-transparent hover:text-blue-800 border-2 border-blue-800 transition-all text-white font-semibold text-sm tracking-wide rounded-md px-6 py-2.5">
+                                        View Project Demo
+                                    </button>
+                                </motion.a>
+                            </motion.div>
+                        </motion.section>
                     </motion.section>
-                </motion.section>
+                ))}
             </div>
         </div>
     );
 };
 
-export default CurrentProject;
+export default CompletedProjects;
