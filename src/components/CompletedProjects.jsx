@@ -158,7 +158,7 @@ const CompletedProjects = () => {
             frontend: [FaReact, FaHtml5, FaCss3Alt, FaJsSquare, SiTailwindcss],
             backend: [FaNode, SiRedux, SiExpress, FaDatabase, SiSequelize, SiPostgresql],
             githubLink: 'https://github.com/rodrigomcobos/evento--project-1',
-            demoLink: 'https://evento-project-1.netlify.app'
+            demoLink: 'https://vimeo.com/1030123389'
         },
         {
             image: CurrentImg3Png,
@@ -168,7 +168,7 @@ const CompletedProjects = () => {
             frontend: [FaReact, FaHtml5, FaCss3Alt, FaJsSquare, SiTailwindcss],
             backend: [FaNode, SiRedux, SiExpress, FaDatabase, SiSequelize, SiPostgresql],
             githubLink: 'https://github.com/Devmountain-group-projects/timeslot-project',
-            demoLink: 'https://timeslot-project.netlify.app'
+            demoLink: 'https://vimeo.com/1030409249'
         },
     ];
 
