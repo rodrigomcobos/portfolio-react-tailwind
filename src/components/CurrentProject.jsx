@@ -153,7 +153,7 @@ const CurrentProject = () => {
         {
             image: CurrentImg2Png,
             imageWebp: CurrentImg2Webp,
-            title: "CCBL Church Website Revamp",
+            title: "MOCOP Church Website Revamp",
             description: "This is a passion project I'm currently working on for my church, which has had a website in need of some serious attention for years. I took it upon myself to spearhead a complete redesign, leveraging modern technologies like React, EmailJS, TailwindCSS, and Vite to give it a fresh, vibrant look and seamless functionality. It's still a work in progress, but I'm genuinely excited to see how it evolves and the impact it will have on our church. There are also exciting plans in the pipeline to incorporate a backend, allowing us to store and manage dynamic content like blog posts, sermons, gallery images, and much more. It's been an incredibly rewarding experience, and I can't wait to share the final result.",
             frontend: [FaReact, FaHtml5, FaCss3Alt, FaJsSquare, SiTailwindcss],
             backend: [FaNode, SiExpress],
