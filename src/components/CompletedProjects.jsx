@@ -153,8 +153,8 @@ const CompletedProjects = () => {
         {
             image: CurrentImgPng,
             imageWebp: CurrentImgWebp,
-            title: "Evento Ticketing Platform",
-            description: "Currently working on this project as an assessment to DevMountain Bootcamp. This will be a fully responsive and fully functional website that will include over 20 components and over 10 pages, utilizing a plethora of tools such as React, JavaScript, Tailwind for the front end and Node, Express, Sequelize ORM and PostgreSQL for the back end, for encryption and authentication I am using Bcrypt, also using EmailJS for form submissions. Also using third party packages like Leaflet, Dotenv, React Icons, Vite with Vite Express, React Router, Redux, Axios, Slick Carousel, React-date picker, and more while utilizing the Ticketmaster API for event data and storing saved data in a database.",
+            title: "Evento Ticketing Platform | PERN Stack",
+            description: "Evento is a fully responsive and fully functional website that will include over 20 components and over 10 pages, utilizing a plethora of tools such as React, JavaScript, Tailwind for the front end and Node, Express, Sequelize ORM and PostgreSQL for the back end, for encryption and authentication I am using Bcrypt, also using EmailJS for form submissions. Also using third party packages like Leaflet, Dotenv, React Icons, Vite with Vite Express, React Router, Redux, Axios, Slick Carousel, React-date picker, and more while utilizing the Ticketmaster API for event data and storing saved data in a database.",
             frontend: [FaReact, FaHtml5, FaCss3Alt, FaJsSquare, SiTailwindcss],
             backend: [FaNode, SiRedux, SiExpress, FaDatabase, SiSequelize, SiPostgresql],
             githubLink: 'https://github.com/rodrigomcobos/evento--project-1',
@@ -163,8 +163,8 @@ const CompletedProjects = () => {
         {
             image: CurrentImg3Png,
             imageWebp: CurrentImg3Webp,
-            title: "Timeline Slot Scheduling Platform",
-            description: "Timeline Slot is an online appointment scheduling platform developed by a team of three developers to simplify booking for service-based businesses. The platform allows businesses to manage schedules, clients, and services efficiently, while providing clients with a user-friendly interface for booking and managing appointments. Built with React for a responsive interface and Redux for efficient state management, the platform uses Tailwind CSS for modern styling. On the backend, Node.js, Express, and Sequelize manage API requests and database communication with PostgreSQL. Key features include ChartJS for visual analytics, React Scheduler for flexible calendar management, and EmailJS for automated client notifications. Bcrypt ensures secure authentication, while Vite optimizes development speed, making the platform robust and efficient for businesses of all sizes.",
+            title: "Timeline Slot Scheduling Platform | PERN Stack",
+            description: "Timeline Slot is an online appointment scheduling platform developed by a team of three developers to simplify booking for service-based businesses. The platform allows businesses to manage schedules, clients, and services efficiently, while providing clients with a user-friendly interface for booking and managing appointments. Built with React for a responsive interface and Redux for efficient state management, the platform uses Tailwind CSS for modern styling. On the backend, Node.js, Express, and Sequelize manage API requests and database communication with PostgreSQL. Key features include ChartJS for visual analytics, React Scheduler for flexible calendar management, and EmailJS for automated client notifications. Bcrypt ensures secure authentication, while Vite optimizes development speed, making the platform robust and efficient for businesses of all sizes. This project was a collaborative effort, with each member contributing their expertise to the development process. Team: Brandon Cansdale and Jareth Carpenter.",
             frontend: [FaReact, FaHtml5, FaCss3Alt, FaJsSquare, SiTailwindcss],
             backend: [FaNode, SiRedux, SiExpress, FaDatabase, SiSequelize, SiPostgresql],
             githubLink: 'https://github.com/Devmountain-group-projects/timeslot-project',
