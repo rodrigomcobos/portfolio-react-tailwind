@@ -126,7 +126,7 @@ const AboutMe = () => {
                         className="text-gray-800 md:text-3xl text-3xl text-end font-extrabold mb-4 md:!leading-[55px]"
                         variants={itemVariants}
                     >
-                        Passionate about Growth, Technology, and Hands-On Learning
+                        Passionate about Growth, Technology, <br />and Hands-On Learning
                     </motion.h2>
 
                     <motion.p
