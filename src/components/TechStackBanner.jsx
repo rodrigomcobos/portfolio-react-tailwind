@@ -1,4 +1,5 @@
 import React from 'react';
+import Marquee from 'react-fast-marquee';
 import {
     FaWordpress,
     FaHtml5,
@@ -6,9 +7,10 @@ import {
     FaNodeJs,
     FaCss3Alt,
     FaShopify,
-    FaBootstrap
+    FaBootstrap,
+    FaFigma
 } from 'react-icons/fa';
-import { SiWoo } from "react-icons/si";
+import { SiWoo, SiAdobexd, SiWix } from "react-icons/si";
 import { RiTailwindCssFill } from "react-icons/ri";
 import { IoLogoJavascript } from "react-icons/io5";
 
@@ -23,7 +25,10 @@ const TechStackBanner = () => {
         { icon: FaShopify, name: 'Shopify' },
         { icon: SiWoo, name: 'WooCommerce' },
         { icon: FaBootstrap, name: 'Bootstrap' },
-        { icon: RiTailwindCssFill, name: 'TailwindCSS' }
+        { icon: RiTailwindCssFill, name: 'TailwindCSS' },
+        { icon: SiWix, name: 'Wix Studio' },
+        { icon: SiAdobexd, name: 'Adobe XD' },
+        { icon: FaFigma, name: 'Figma' }
     ];
 
     return (
@@ -35,9 +40,13 @@ const TechStackBanner = () => {
 
                 {/* Tech stack banner with blue background */}
                 <div className="absolute left-0 right-0 bg-blue-800 transform -skew-y-3 py-6">
-                    <div className="relative overflow-hidden">
-                        <div className="flex items-center whitespace-nowrap animate-scroll">
-                            {[...technologies, ...technologies].map((tech, index) => (
+                    <div className="relative">
+                        <Marquee
+                            speed={80}
+                            gradient={false}
+                            className="flex items-center"
+                        >
+                            {technologies.map((tech, index) => (
                                 <div
                                     key={index}
                                     className="flex items-center gap-3 text-white mx-8 shrink-0"
@@ -46,7 +55,7 @@ const TechStackBanner = () => {
                                     <span className="text-xl font-bold">{tech.name}</span>
                                 </div>
                             ))}
-                        </div>
+                        </Marquee>
                     </div>
                 </div>
             </div>
