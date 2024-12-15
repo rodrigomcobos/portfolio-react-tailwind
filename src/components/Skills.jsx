@@ -13,6 +13,8 @@ import TailwindIcon from '../assets/tailwind.svg';
 import FigmaIcon from '../assets/figma.svg';
 import XdIcon from '../assets/xd.svg';
 
+import { FaCode } from "react-icons/fa";
+
 const skills = [
     { name: 'HTML 5', icon: HtmlIcon },
     { name: 'CSS 3', icon: CSSIcon },
@@ -97,7 +99,12 @@ const Skills = () => {
     return (
         <div className="px-4 sm:px-6 lg:px-6 py-24">
             <div className="max-w-9xl mx-auto">
-                <div className="bg-gray-200 rounded-3xl overflow-hidden">
+                <div className="bg-gray-200 rounded-3xl overflow-hidden relative">
+                    {/* Background Code Icon */}
+                    <div className="absolute bottom-8 right-8 text-gray-400 opacity-30">
+                        <FaCode className="w-96 h-96" />
+                    </div>
+
                     <div className="py-12 sm:py-24 px-6 sm:px-12">
                         <motion.div
                             id='skills'
