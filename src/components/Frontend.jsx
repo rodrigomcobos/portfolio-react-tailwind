@@ -2,14 +2,17 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import Image from 'react-image-webp';
 import Slider from 'react-slick';
-import { FaReact, FaHtml5, FaCss3Alt, FaJsSquare, FaNode, FaDatabase, FaBootstrap } from 'react-icons/fa';
-import { SiJquery } from "react-icons/si";
+import { FaReact, FaHtml5, FaCss3Alt, FaJsSquare, FaNode, FaDatabase, FaBootstrap, FaNpm } from 'react-icons/fa';
+import { RiTailwindCssFill } from "react-icons/ri";
+import { SiJquery, SiMinutemailer } from "react-icons/si";
 import FrontendImg1Png from '../assets/frontend1.jpg';
 import FrontendImg1Webp from '../assets/frontend1.webp';
 import FrontendImg2Png from '../assets/frontend2.jpg';
 import FrontendImg2Webp from '../assets/frontend2.webp';
 import FrontendImg3Png from '../assets/frontend3.jpg';
 import FrontendImg3Webp from '../assets/frontend3.webp';
+import FrontendImg4 from '../assets/frontend4.png';
+import FrontendImgWebp4 from '../assets/frontend4.webp';
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -17,6 +20,15 @@ import "slick-carousel/slick/slick-theme.css";
 const cardData = [
     {
         id: 1,
+        title: 'Mocop Church Website',
+        description: 'Responsive website with all UI components utilizing React and TailwindCSS, and EmailJS for contact form. Created for a local church. Site is Live.',
+        image: FrontendImg4,
+        imageWebp: FrontendImgWebp4,
+        icons: [<FaHtml5 />, <FaCss3Alt />, <FaJsSquare />, <FaReact />, <RiTailwindCssFill />, <FaNpm />, <SiMinutemailer />],
+        link: 'https://igrejabrasil.com/',
+    },
+    {
+        id: 2,
         title: 'Blueberry Hill Bakery',
         description: 'Website created for a small business located in Freeport, FL. Website responsive with all UI components.',
         image: FrontendImg1Png,
@@ -25,7 +37,7 @@ const cardData = [
         link: 'https://blueberry-hill-bakery.netlify.app',
     },
     {
-        id: 2,
+        id: 3,
         title: 'Brazilian Ecotourism Landing',
         description: 'Landing page responsive with all UI components and animated interactions. Created for a local tour company.',
         image: FrontendImg2Png,
@@ -34,7 +46,7 @@ const cardData = [
         link: 'https://amazonas-ecoturismo.netlify.app',
     },
     {
-        id: 3,
+        id: 4,
         title: 'REO MakeReady Landing',
         description: 'Responsive landing page with all UI components. Created for a local remodeling company.',
         image: FrontendImg3Png,
